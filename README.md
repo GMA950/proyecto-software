@@ -1,5 +1,5 @@
 # proyecto-software
-Proyecto para INFO248
+Proyecto para taller de Ingenieria de Software
 
 npx create-react-app inventario-v2
 cd  inventario-v2
