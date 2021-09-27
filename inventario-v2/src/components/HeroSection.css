@@ -8,7 +8,7 @@ video{
 
 .hero-container {
     background: url('../images/inventory-background.jpg') center center/cover no-repeat;
-    filter: grayscale(90%);
+    filter: grayscale(100%);
     /*opacity: 0.3;*/
     height: 100vh;
     width: 100%;
@@ -18,6 +18,9 @@ video{
     align-items: center;
     box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.2);
     object-fit: contain;
+}
+.hero-alpha {
+    background-color: rgba(0, 0, 0, 0.9)
 }
 
 /*.hero-nombre-empresa{

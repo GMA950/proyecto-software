@@ -6,6 +6,7 @@ import './HeroSection.css';
 
 function HeroSection() {
     return (
+        /*<div className = 'hero-alpha'>*/
         <div className ='hero-container'>
             {/*<video src="/videos/video-2.mp4" autoPlay loop muted/>*/}
             <h1>Sistema de Inventario</h1>
@@ -42,6 +43,7 @@ function HeroSection() {
             </form>
             </div>
         </div>
+        /*</div>*/
     )
 }
 
