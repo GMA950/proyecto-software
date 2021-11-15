@@ -1,9 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 import '../App.css';
-import { Button } from './Button';
 import './InvSection.css';
 import StockEventsTable from './StockEventsTable';
+import InvOptions from './InvOptions';
 
 // 2 Data Types
 
@@ -64,6 +64,7 @@ class InvSection extends React.Component{
         return (
             <div className ='inv-container'>
                 <h1>Inventario</h1>
+                <InvOptions/>
                 <StockEventsTable
                     products={fetchedProducts} 
                     stockEvents = {fetchedStockEvents}
@@ -72,55 +73,5 @@ class InvSection extends React.Component{
         );
     }
 }
-
-/*
-function InvSection() {
-    return (
-        <div className ='inv-container'>
-            <video src="/videos/video-2.mp4" autoPlay loop muted/>
-            <h1>Inventario</h1>
-            <StockEventsTable
-                products={fetchedProducts} 
-                stockEvents = {fetchedStockEvents}
-            />
-            
-            {/*<p>Inicio de Sesión</p>*/
-            /*<div className="hero-btns">
-                <Button className='btns' 
-                buttonStyle='btn--outline'
-                buttonSyze='btn--large'
-                >
-                    GET STARTED
-                </Button>
-                <Button className='btns' 
-                buttonStyle='btn--primary'
-                buttonSyze='btn--large'
-                >
-                    WATCH TRAILER <i className = 'far fa-play-circle' />
-                </Button>
-            </div>*/
-            /*
-            <div className='input-areas'>
-            <form>
-                <input
-                className='hero-input'
-                name='usuario'
-                type='usuario'
-                placeholder='USUARIO'
-                />
-                <input
-                className='hero-input'
-                name='password'
-                type='password'
-                placeholder='CONTRASEÑA'
-                />
-                <Button buttonStyle='hero-btns' buttonStyle='btn--primary'>Iniciar Sesión</Button>
-            </form>
-            </div>
-            /
-        </div>
-    );
-}
-*/
 
 export default InvSection;
