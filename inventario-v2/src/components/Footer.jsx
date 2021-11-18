@@ -1,6 +1,7 @@
 import React from 'react';
+//import 'bootstrap/dist/css/bootstrap.min.css';
 import './Footer.css';
-import { Button } from './Button';
+//import { Button2 } from './Button2';
 import { Link } from 'react-router-dom';
 
 function Footer() {

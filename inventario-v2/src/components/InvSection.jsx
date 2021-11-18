@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+//import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 import './InvSection.css';
 import StockEventsTable from './StockEventsTable';
@@ -63,8 +64,11 @@ class InvSection extends React.Component{
         const {fetchedProducts, fetchedStockEvents} = this.state
         return (
             <div className ='inv-container'>
-                <h1>Inventario</h1>
-                <InvOptions/>
+                <div class = 'row'>
+                    <div class = 'col'><div className = "usr-cont">Bienvenido: USUARIO NULL</div></div>
+                    <div class = 'col'><div className = "inv-til">Inventario</div></div>
+                    <div class = 'col'><InvOptions/></div>
+                </div>
                 <StockEventsTable
                     products={fetchedProducts} 
                     stockEvents = {fetchedStockEvents}

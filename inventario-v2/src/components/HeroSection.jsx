@@ -1,6 +1,7 @@
 import React from 'react';
+//import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
-import { Button } from './Button';
+import { Button2 } from './Button2';
 import './HeroSection.css';
 
 
@@ -39,7 +40,7 @@ function HeroSection() {
                 type='password'
                 placeholder='CONTRASEÑA'
                 />
-                <Button buttonStyle='hero-btns' buttonStyle='btn--primary'>Iniciar Sesión</Button>
+                <Button2 dir = '/inv' buttonStyle='hero-btns' buttonStyle='btn2--primary'>Iniciar Sesión</Button2>
             </form>
             </div>
         </div>
