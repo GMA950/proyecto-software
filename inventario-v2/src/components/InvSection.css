@@ -19,7 +19,7 @@
 
 .mb-2{
     display: flex;
-    margin-left:23%;
+    margin-left:20%;
     margin-right:auto;
     margin-top:14.5%;
 }
@@ -53,6 +53,18 @@
     padding: 0em;
     /*border: solid;*/
   }
+
+.table-container{
+    background-color: #fff;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1%;
+    border: 1px solid;
+    border-radius: 5px;
+    margin-bottom: 2%;
+}
 
 /*.hero-nombre-empresa{
     margin-top: 500px;

@@ -5,6 +5,7 @@ import '../App.css';
 import './InvSection.css';
 import StockEventsTable from './StockEventsTable';
 import InvOptions from './InvOptions';
+import Search from './Search';
 
 // 2 Data Types
 
@@ -69,10 +70,13 @@ class InvSection extends React.Component{
                     <div class = 'col'><div className = "inv-til">Inventario</div></div>
                     <div class = 'col'><InvOptions/></div>
                 </div>
-                <StockEventsTable
-                    products={fetchedProducts} 
-                    stockEvents = {fetchedStockEvents}
-                />
+                <div class = "table-container">
+                    <Search/>
+                    <StockEventsTable
+                        products={fetchedProducts} 
+                        stockEvents = {fetchedStockEvents}
+                    />
+                </div>
             </div>
         );
     }
