@@ -19,13 +19,26 @@
 
 .mb-2{
     display: flex;
-    margin-left:20%;
-    margin-right:auto;
-    margin-top:14.5%;
+    flex-direction: row;
+    width: 90%;
+}
+
+.mbl {
+    display: flex;
+    flex-direction: row;
+    margin-left: 1%;
+    margin-right: auto;
+}
+
+.mbr {
+    display: flex;
+    flex-direction: row;
+    margin-right: 1%;
+    margin-left: auto;
 }
 
 .bt3{
-    padding: 10px 10px 10px 0px;
+    padding: 10px 10px 10px 10px;
 }
 
 .usr-cont{

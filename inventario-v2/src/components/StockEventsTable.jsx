@@ -98,6 +98,7 @@ function StockEventsTable(props){
                                 
                                     < StockDetail 
                                         id = {product.id} 
+                                        code = {product.code}
                                         name = {product.name}
                                         cat = {product.cat}
                                         fab = {product.fab}

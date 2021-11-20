@@ -8,18 +8,25 @@ import './InvSection.css';
 
 
 function InvOptions() {
-    return (    
-        <div className="mb-2">
+    return (
+        <>    
+        <div className="mbl">
+            <div className="bt3">
+                <Button variant="secondary" size="lg">Ingresar Productos</Button>
+            </div>
             <div className="bt3">
                 <Button variant="warning" size="lg">Bajos en Stock</Button>
             </div>
+        </div>
+        <div className="mbr">
             <div className="bt3">
                 <Button variant="primary" size="lg">Importar</Button>
             </div>
             <div className="bt3">
-                <Button variant="secondary" size="lg">Exportar</Button>
+                <Button variant="success" size="lg">Exportar</Button>
             </div>
         </div>
+        </>
     )
 }
 

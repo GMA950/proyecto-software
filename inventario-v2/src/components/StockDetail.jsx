@@ -9,14 +9,14 @@ class StockDetail extends React.Component{
 
 
     render(){
-        const {id, name, cat, fab, model, ver, year, price, total, stockEvents} = this.props
+        const {id, code, name, cat, fab, model, ver, year, price, total, stockEvents} = this.props
         const {show} = this.state
         return(
             <>
             <tr className="StockDetail" onClick={() => this.setState({show: !show})}>
                 {/*<h2>Product: {name} | Total: {total}</h2>*/}
                 <td>{id}</td>
-                <td>NULL</td> {/*codigo*/}
+                <td>{code}</td> {/*codigo*/}
                 <td>{name}</td> {/*nombre*/}
                 <td>{cat}</td> {/*categoria*/}
                 <td>{fab}</td> {/*fabricante*/}

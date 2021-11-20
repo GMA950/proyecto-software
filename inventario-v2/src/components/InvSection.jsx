@@ -87,8 +87,9 @@ class InvSection extends React.Component{
                 <div class = 'row'>
                     <div class = 'col'><div className = "usr-cont">Bienvenido: USUARIO NULL</div></div>
                     <div class = 'col'><div className = "inv-til">Inventario</div></div>
-                    <div class = 'col'><InvOptions/></div>
+                    <div class = 'col'></div>
                 </div>
+                <div className="mb-2"><InvOptions/></div>
                 <div class = "table-container">
                     <Search handleChange={this.handleChange} svalues = {this.state.searchData}/>
                     <StockEventsTable
