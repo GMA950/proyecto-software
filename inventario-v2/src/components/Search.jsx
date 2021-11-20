@@ -1,13 +1,65 @@
-import React from 'react';
-import axios from 'axios';
-import StockEventsTable from './StockEventsTable';
-import 'bootstrap/dist/css/bootstrap.min.css';
+/*import React from 'react';*/
+import React, { useEffect, useState } from "react";
 import Button from 'react-bootstrap/Button';
 import '../App.css';
 import './Search.css';
 
 
-function Search() {
+
+function Search(props) {
+
+    const [initialState, setAllValues] = useState({
+        code: '',
+        name: '',
+        cat: '',
+        fab: '',
+        model: '',
+        ver: '',
+        year: '',
+        price: '',
+        stock: ''
+     });
+
+     //initialSearch = allSearchValues
+
+    const changeHandler = e => {
+        //const { name, value } = e.target;
+        //setAllValues({...allSearchValues, [e.target.name]: e.target.value})
+        setAllValues({...initialState, [e.target.name]: e.target.value})
+        //setState((prevState) => ({ ...prevState, [name]: value }));
+        //console.log(allSearchValues)
+    }
+
+    useEffect(() => {
+        sendValues()
+      },[initialState]);
+
+    const sendValues = e =>{
+        props.handleChange(initialState)
+    }
+
+    const twoCalls = e => {
+        changeHandler(e)
+        sendValues()
+    }
+
+    const clearState = () => {
+        //setState({ ...initialState });
+        setAllValues({...initialState, code: '',name: '',cat: '',fab: '',model: '',ver: '',year: '',price: '',stock: ''})
+        //console.log(initialState)
+    };
+        // Reset Input Field handler
+    const resetInputField = () => {
+
+        var form = document.getElementById("search-form").reset();
+
+        //changeHandler()
+        clearState()
+        //console.log(initialState)
+        //setState({ ...allSearchValues });
+        //sendValues()
+    };
+
     return (
         <div className = "bg-cont">
             <div className="mb-3">
@@ -24,44 +76,40 @@ function Search() {
                     <div class = 'colend'><div className = "search-item">Stock</div></div>
                 </div>
             </div>
-            {/*<input
-                className='hero-input'
-                name='password'
-                type='password'
-                placeholder='CONTRASEÑA'
-            />*/}
             <div className="mb-3">
                 <div class = 'row3'>
-                    <div class = 'colbtn'>
-                        <Button variant="info" size = "sm">Borrar <i class="fas fa-eraser"></i></Button>
-                    </div>
-                    <div class = 'col3'>
-                        <input type="number" className="search-input" name = "code"/>
-                    </div>
-                    <div class = 'col3'>
-                        <input type="text" className="search-input" name = "name"/>
-                    </div>
-                    <div class = 'col3'>
-                        <input type="text" className="search-input" name = "cat"/>
-                    </div>
-                    <div class = 'col3'>
-                        <input type="text" className="search-input" name = "fab"/>
-                    </div>
-                    <div class = 'col3'>
-                        <input type="text" className="search-input" name = "model"/>
-                    </div>
-                    <div class = 'col3'>
-                        <input type="text" className="search-input" name = "ver"/>
-                    </div>
-                    <div class = 'col3'>
-                        <input type="number" className="search-input" name = "year"/>
-                    </div>
-                    <div class = 'col3'>
-                        <input type="number" className="search-input" name = "price"/>
-                    </div>
-                    <div class = 'col3'>
-                        <input type="number" className="search-input" name = "stock"/>
-                    </div>
+                    <form id = "search-form">
+                        <div class = 'colbtn'>
+                            <Button variant="info" size = "sm" onClick={resetInputField}>Borrar <i class="fas fa-eraser"></i></Button>
+                        </div>
+                        <div class = 'col3'>
+                            <input type="number" className="search-input" name = "code" onChange={changeHandler}/> {/*twoCalls*/}
+                        </div>
+                        <div class = 'col3'>
+                            <input type="text" className="search-input" name = "name" onChange={changeHandler}/>
+                        </div>
+                        <div class = 'col3'>
+                            <input type="text" className="search-input" name = "cat" onChange={changeHandler}/>
+                        </div>
+                        <div class = 'col3'>
+                            <input type="text" className="search-input" name = "fab" onChange={changeHandler}/>
+                        </div>
+                        <div class = 'col3'>
+                            <input type="text" className="search-input" name = "model" onChange={changeHandler}/>
+                        </div>
+                        <div class = 'col3'>
+                            <input type="text" className="search-input" name = "ver" onChange={changeHandler}/>
+                        </div>
+                        <div class = 'col3'>
+                            <input type="text" className="search-input" name = "year" onChange={changeHandler}/>
+                        </div>
+                        <div class = 'col3'>
+                            <input type="number" className="search-input" name = "price" onChange={changeHandler}/>
+                        </div>
+                        <div class = 'col3'>
+                            <input type="number" className="search-input" name = "stock" onChange={changeHandler}/>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

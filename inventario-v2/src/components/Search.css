@@ -90,3 +90,12 @@
 .bg-cont{
     width: 100%;
 }
+
+form{
+  display: flex;
+  flex-direction: row;
+}
+
+label, input {
+  display: block; /* 1. oh noes, my inputs are styled as block... */
+}
