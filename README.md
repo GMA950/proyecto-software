@@ -1,19 +1,11 @@
 # proyecto-software
 Proyecto para taller de Ingenieria de Software
+1)abrir terminal en la carpeta del proyecto (inventario-v2)
 
-npx create-react-app inventario-v2
-cd  inventario-v2
+2) npm install
 
-reemplazar archivos por los del git
+3) npm start 
 
-
-despues
-
-npm install react-router-dom
-
-iniciamos la web de forma local con
-
-yarn start
 
 http://localhost:3000/
 
