@@ -1,10 +1,11 @@
 :root {
-    --primary: #242424;
+    --primary: #ffffff;
 }
 
 .btn {
     padding: 8px 20px;
     border-radius: 2px;
+    text-decoration: none;
     outline: none;
     border: none;
     cursor: pointer;
@@ -27,6 +28,7 @@
 .btn--medium{
     padding: 8px 20px;
     font-size: 20px;
+    color: white;
 }
 
 .btn--large{

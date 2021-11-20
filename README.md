@@ -16,3 +16,8 @@ iniciamos la web de forma local con
 yarn start
 
 http://localhost:3000/
+
+
+se necesita de strapi y axios
+
+la version 14.7.0 de node fue usada

@@ -1,0 +1,10 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.StockEventTable__Card{
+    margin: 12px 0;
+    border: 2px solid #eee;
+    padding: 24px;
+    border-radius: 3px;
+}
