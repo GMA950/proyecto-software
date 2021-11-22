@@ -1,14 +1,14 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'PT Sans', sans-serif;
+body{
+  display: grid;  
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
 }
+
 
 .home,
 .services,
 .products,
-.inv {
+.sign-up {
   display: flex;
   height: 90vh;
   align-items: center;

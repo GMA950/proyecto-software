@@ -1,0 +1,42 @@
+:root{
+    --colorHover: #ED6A5A;
+    --bacgroudColor : #242424;
+}
+
+.navbar-container{
+    background: var(--bacgroudColor);
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+   
+}
+
+.nav-logo{
+    padding-top: 1rem;
+    color: #fff;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+}
+.nav-logo-logged{
+    border: 2px solid red;
+    padding-top: 1rem;
+    color: #fff;
+    height: 80px;
+    justify-self: start;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    margin-left: 20px;
+}
+
+.nav-logo:hover{
+    color:var(--colorHover) ;
+}

@@ -2,7 +2,7 @@ import React from 'react';
 //import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../App.css';
 import Cards from '../Cards';
-import Footer from '../Footer';
+//import Footer from './Components/Footer';
 import HeroSection from '../HeroSection';
 
 
@@ -11,7 +11,7 @@ function Home (){
         <>
         <HeroSection/>
         {/*<Cards/>*/}
-        <Footer/>
+        {/*<Footer/>*/}
         </>
     );
 }
