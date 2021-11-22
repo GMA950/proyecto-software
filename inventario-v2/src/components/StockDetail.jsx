@@ -15,7 +15,7 @@ class StockDetail extends React.Component{
             <>
             <tr className="StockDetail" onClick={() => this.setState({show: !show})}>
                 {/*<h2>Product: {name} | Total: {total}</h2>*/}
-                <td>{id}</td>
+                <td>1</td>{/*id*/}
                 <td>{code}</td> {/*codigo*/}
                 <td>{name}</td> {/*nombre*/}
                 <td>{cat}</td> {/*categoria*/}

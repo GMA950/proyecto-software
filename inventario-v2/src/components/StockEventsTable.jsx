@@ -14,17 +14,40 @@ function StockEventsTable(props){
             <Table striped bordered hover size="sm">
                 <tbody>
                     {products.filter((product) => {
-                        //console.log(searchValues)
+                        //console.log(product.name.toLowerCase())
+                        //console.log(product.cat.toLowerCase())
+                        //console.log(product.fab.toLowerCase())
+                        //console.log(product.model.toLowerCase())
+                        //console.log(product.ver.toLowerCase())
+                        if(product.name==undefined){
+                            product.name=''
+                        }
+                        if(product.cat==undefined){
+                            product.cat=''
+                        }
+                        if(product.fab==undefined){
+                            product.fab=''
+                        }
+                        if(product.model==undefined){
+                            product.model=''
+                        }
+                        if(product.ver==undefined){
+                            product.ver=''
+                        }
+                        if(product.year==undefined){
+                            product.year=''
+                        }
+                        if(product.price==undefined){
+                            product.price=''
+                        }
                         if(searchValues.code=="" && searchValues.name=="" && searchValues.cat=="" && searchValues.fab=="" && searchValues.model=="" && searchValues.ver=="" && searchValues.year=="" && searchValues.stock=="" && searchValues.price==""){
                             console.log("limpio")
                             return product
                         }else if(product.name.toLowerCase().includes(searchValues.name.toLowerCase()) 
                                 && product.cat.toLowerCase().includes(searchValues.cat.toLowerCase()) 
                                 && product.fab.toLowerCase().includes(searchValues.fab.toLowerCase())
-                                && product.cat.toLowerCase().includes(searchValues.cat.toLowerCase())
                                 && product.model.toLowerCase().includes(searchValues.model.toLowerCase())
-                                && product.ver.toLowerCase().includes(searchValues.ver.toLowerCase())
-                                && product.code.toLowerCase().includes(searchValues.code.toLowerCase())){ //product.name.toLowerCase().includes(searchValues.name.toLowerCase())
+                                && product.ver.toLowerCase().includes(searchValues.ver.toLowerCase())){ //product.name.toLowerCase().includes(searchValues.name.toLowerCase())
                                 if(searchValues.year!="" || searchValues.stock!="" || searchValues.price!=""){
 
                                     const {id} = product
