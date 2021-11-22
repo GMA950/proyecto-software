@@ -44,7 +44,8 @@ function StockEventsTable(props){
                             console.log("limpio")
                             return product
                         }else if(product.name.toLowerCase().includes(searchValues.name.toLowerCase()) 
-                                && product.cat.toLowerCase().includes(searchValues.cat.toLowerCase()) 
+                                && product.cat.toLowerCase().includes(searchValues.cat.toLowerCase())
+                                && product.code.toLowerCase().includes(searchValues.code.toLowerCase())  
                                 && product.fab.toLowerCase().includes(searchValues.fab.toLowerCase())
                                 && product.model.toLowerCase().includes(searchValues.model.toLowerCase())
                                 && product.ver.toLowerCase().includes(searchValues.ver.toLowerCase())){ //product.name.toLowerCase().includes(searchValues.name.toLowerCase())
@@ -107,7 +108,7 @@ function StockEventsTable(props){
                             //console.log(product.name.toLowerCase())
                             //return product
                         }
-                    }).map(product => {
+                    }).map((product, i) => {
                         const {id} = product
 
                         const relevantStockEvents = stockEvents.filter(se => se.product.id === product.id)
@@ -118,9 +119,9 @@ function StockEventsTable(props){
                         return(
                             <>
                             {/*<div className = "StockEventTable__ProductContainer">*/}
-                                
+                            {/*{product.id} */}
                                     < StockDetail 
-                                        id = {product.id} 
+                                        id = {i+1} 
                                         code = {product.code}
                                         name = {product.name}
                                         cat = {product.cat}
