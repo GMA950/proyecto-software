@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "users_apps",
+  "info": {
+    "name": "Usuarios",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Rut": {
+      "type": "uid",
+      "required": true
+    },
+    "Name": {
+      "type": "string"
+    },
+    "LastName": {
+      "type": "string"
+    },
+    "UserName": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Email": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    },
+    "Phone": {
+      "type": "biginteger"
+    },
+    "Password": {
+      "type": "password",
+      "required": true,
+      "unique": true
+    }
+  }
+}

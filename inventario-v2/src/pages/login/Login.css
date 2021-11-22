@@ -3,11 +3,9 @@
 :root{
 
     --base : linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
-    --color1:  #060d16;
     --color2:  #182e39;
     --color3: #194f66;
     --color4: #207c97;
-    --color5: #2bacc9;
     --color6: #122932;
     --color7: #628395;
     --color8: #ECF0F1;

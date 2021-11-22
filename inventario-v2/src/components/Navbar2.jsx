@@ -2,7 +2,7 @@ import React, {useState, useEffect}  from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar1.css';
 import { Button } from './Button';
-import { useNavigate } from 'react-router-dom'   
+  
 
 function Navbar() {
     const [click, setClick] = useState(false);

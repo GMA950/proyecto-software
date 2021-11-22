@@ -1,15 +1,21 @@
 
-import React from "react"
-
+import React, { useState } from "react"
 import { useHistory } from "react-router-dom"
 import './Login.css'
-
+import axios from 'axios'
 
 export default function Login(){
+    const [username,setUsername] = useState("")
+    const [password,setPassword] = useState("")
     const pushLocation= useHistory()
 
-    const handleSubmit= evt =>{
-        evt.preventDefault()
+    const handleSubmit= e =>{
+        e.preventDefault()
+        axios.get('http://localhost:1337/users-apps').then(response =>{
+            console.log(response);
+            console.log(response.data);
+        })
+        alert(`${username}, ${password}`)
         pushLocation.push('/sign-up')
     }
     return (
@@ -19,8 +25,8 @@ export default function Login(){
                     <h1 className = 'title'>Inicio de Sesion</h1>
                     
                     <form  className='inputs-container' onSubmit= {handleSubmit}>
-                        <input className='Login-input' type='usuario'  placeholder='Usuario'/>
-                        <input className='Login-input' type='password' placeholder='Contraseña'/>
+                        <input className='Login-input' type='usuario'  placeholder='Usuario' onChange={e=> setUsername(e.target.value)} value = {username}/>
+                        <input className='Login-input' type='password' placeholder='Contraseña' onChange={e => setPassword(e.target.value)} value={password}/>
                         <button className = 'Login-btn'> Iniciar Sesion </button>
                         <p>Olvidaste tu contraseña? <span className='span'>Click aqui</span> </p>
                        

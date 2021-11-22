@@ -9,26 +9,27 @@ import SignUp from './components/pages/SignUp';
 
 import Login from './pages/login';
 import Footer from './components/Footer';
-
+import Header from 'components/Header';
+import {UserContextProvider} from 'context/UserContext'
 function App() {
   return (
-    <>
-    <Router>
-      <Switch>
-        <Route path='/services' exact component = {Services}/>
-        <Route path='/products' exact component = {Products}/>
-        <Route path='/sign-up' exact component = {SignUp}/>
-        <div>
-          <Navbar />
-          <Route path='/' exact component = {Login}/>
-          
-        </div>
-      </Switch>
-      <Footer></Footer>
-     
-    </Router>
-    
-    </>
+    <UserContextProvider>
+      <Router>
+        <Header/>
+        <Switch>
+          <Route path='/services' exact component = {Services}/>
+          <Route path='/products' exact component = {Products}/>
+          <Route path='/sign-up' exact component = {SignUp}/>
+          <div>
+            <Navbar />
+            <Route path='/' exact component = {Login}/>
+            
+          </div>
+        </Switch>
+        <Footer></Footer>
+      
+      </Router>
+    </UserContextProvider>
   );
 }
 

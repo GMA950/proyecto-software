@@ -1,10 +1,11 @@
 
 :root{
     --colorHover: #ED6A5A;
+    --bacgroudColor : #242424;
 }
 
 .footer-container{
-    background-color: #242424;
+    background-color:var(--bacgroudColor);
     
     position: relative;
     height: 100px;
@@ -57,9 +58,5 @@
     margin: 5rem;
 }
 
-.span{
-    color: var(--colorHover);
-    font-weight: 600;
-    cursor: pointer;
-}
+
 

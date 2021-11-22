@@ -27,7 +27,7 @@ function Navbar() {
     return (
         <>
             <nav className='navbar'>
-                <div className='navbar-container'>
+                <div className='navbar-container2'>
                     <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
                         Valrepuestos<i className="fab fa-typo3"/>
                     </Link>
