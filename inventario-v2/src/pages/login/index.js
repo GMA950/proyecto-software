@@ -1,13 +1,20 @@
 
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
 import './Login.css'
 import axios from 'axios'
+import useUser from "hooks/useUser"
 
 export default function Login(){
     const [username,setUsername] = useState("")
     const [password,setPassword] = useState("")
     const pushLocation= useHistory()
+    const {login, isLogged} = useUser()
+
+
+    useEffect(()=> {
+        if (isLogged) pushLocation.push('/inv')
+    }, [isLogged, pushLocation])
 
     const handleSubmit= e =>{
         e.preventDefault()
@@ -16,7 +23,8 @@ export default function Login(){
             console.log(response.data);
         })
         alert(`${username}, ${password}`)
-        pushLocation.push('/inv')
+        login({username,password})
+        //pushLocation.push('/inv')
     }
     return (
         <div className='Login-container'>

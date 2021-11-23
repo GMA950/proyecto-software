@@ -1,10 +1,13 @@
 import React, {useState, useEffect}  from 'react';
 import { Link } from 'react-router-dom';
 //import 'bootstrap/dist/css/bootstrap.min.css';
-import './Navbar1.css';
-//import { Button } from './Button';
+import './NavbarLogged.css'
+import { Button2 } from '../Button2';
+
+ 
 
 function Navbar() {
+    
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
 
@@ -20,45 +23,49 @@ function Navbar() {
     };
 
     useEffect(() =>{
-        showButton()
+        
     }, []);
 
     window.addEventListener('resize', showButton);
 
     return (
         <>
-            <nav className='navbar'>
+            <nav className='navbar2'>
                 <div className='navbar-container'>
-                    <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+                    <div className='navbar-logo' >
                         Valrepuestos<i className="fab fa-typo3"/>
-                    </Link>
-                    {/*<div className='menu-icon' onClick={handleClick}>
+                    </div>
+                    
+                    <div className='menu-icon' onClick={handleClick}>
                         <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
-                      </div>*/}
-                    {/*
+                      </div>
+                    
                     <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                         <li className='nav-item'>
-                            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-                                Home
+                            <Link to='/inv' className='nav-links' onClick={closeMobileMenu}>
+                                INICIO
                             </Link>
                         </li>
                         <li className='nav-item'>
-                            <Link to='/services' className='nav-links' onClick={closeMobileMenu}>
-                                Services
+                            <Link to='/inv' className='nav-links' onClick={closeMobileMenu}>
+                                INVENTARIO
                             </Link>
                         </li>
                         <li className='nav-item'>
-                            <Link to='/products' className='nav-links' onClick={closeMobileMenu}>
-                                Products
+                            <Link to='/Products' className='nav-links' onClick={closeMobileMenu}>
+                                CONFIGURACIÓN
                             </Link>
                         </li>
                         <li className='nav-item'>
-                            <Link to='/sign-up' className='nav-links-mobile' onClick={closeMobileMenu}>
-                                Sign Up
-                            </Link>
+                            
+                            {!button  && <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                                CERRAR SESIÓN
+                            </Link>}
                         </li>
                     </ul>
-                    {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}*/}
+                    {/*{button && <Button buttonStyle='btn--outline'>CERRAR SESIÓN</Button>}*/}
+                    {/*{button && <Button2 dir = '/' buttonStyle='btn2--outline'><Link to='/' className='nav-links2'>CERRAR SESIÓN</Link></Button2>}*/}
+                    {button && <Button2 dir = '/' buttonStyle='btn2--outline'>CERRAR SESIÓN</Button2>}
                 </div>
             </nav>
         </>
