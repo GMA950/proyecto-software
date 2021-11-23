@@ -1,22 +1,26 @@
+
 import React from "react";
-import { Link } from "react-router-dom";
 import './header.css'
+import Navbar from "components/NavbarLogged";
+import useUser from "hooks/useUser";
+
 
 export default function Header(){
-    const isLogged = true
-
+    //const isLogged = true
+    const {isLogged,logout} = useUser()
     return(
         <header className= 'app-header'>
             {
                 isLogged
                     // este seria el navBar una vez iniciada la sesion
-                    ? <nav className= 'navbar-container'>
-                            <div className='nav-logo-logged' >
-                                Valrepuestos<i className="fab fa-typo3"/>
-                            </div>
-                    </nav>
+                    ? <div>
+                        <Navbar></Navbar>
+                        <button onClick={logout}></button>
+                    </div>
+                        
+
                     // navbar antes del login
-                    : <nav className= 'navbar-container'>
+                    : <nav className= 'header-container'>
                         <div className= 'nav-logo'>
                             Valrepuestos<i className="fab fa-typo3"/>
                         </div>
