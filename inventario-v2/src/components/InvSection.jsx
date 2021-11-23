@@ -1,18 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 import axios from 'axios';
+//import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 import './InvSection.css';
 import StockEventsTable from './StockEventsTable';
 import InvOptions from './InvOptions';
+import Search from './Search';
 
 // 2 Data Types
 
 // Products
 
 const fetchedProducts = [
-    {id: 1, name: "Motor"},
-    {id: 2, name: "Rueda"},
-    {id: 3, name: "Aromatizante"}
+    {id: 1, code: '0', name: "Barra Torsión IZQ", cat: "Suspensión", fab: "Chevrolet", model: "Dmax", ver:"Todas", year: "2006-2014", price: 40000, critic: 10},
+    {id: 2, code: '0', name: "Optico IZQ", cat: "Opticos", fab: "Mazda", model: "626", ver:"FS DOHC 16 VALV 4X2", year: "2000-2004", price: 70000, critic: 10},
+    {id: 3, code: '0', name: "Bateria Auto 60AH 550CCA",cat: "Electricos", fab: "Hankook", model: "", ver:"", year: "", price: 64990, critic: 10}
 ]
 
 // stock events
@@ -26,6 +28,8 @@ const fetchedStockEvents = [
     {id: 5, type: 'remove', qty: -45, product: fetchedProducts[1]},
 ]
 
+const searchData = {code: '',name: '',cat: '',fab: '',model: '',ver: '',year: '',price: '',stock: ''}
+
 //fetch stock events
 
 
@@ -33,10 +37,21 @@ const fetchedStockEvents = [
 //display
 
 class InvSection extends React.Component{
+
     state = {
         fetchedProducts,
-        fetchedStockEvents
+        fetchedStockEvents,
+        searchData
     }
+
+    handleChange = (value) => {
+        // handle changes from child
+        //searchData = value
+        //console.log(value)
+        const searchData = value
+        this.setState({searchData}) //funciona por algun motivo llama de nuevo el render creo this.setSate(searchData = value)
+        //console.log(searchData)
+     }
 
     async componentDidMount(){
 
@@ -55,20 +70,34 @@ class InvSection extends React.Component{
         const fetchedProducts = productsRes.data
         const fetchedStockEvents = stockEventsRes.data
 
-        this.setState({fetchedProducts, fetchedStockEvents})
+        this.setState({fetchedProducts, fetchedStockEvents}) //searchData
     }
+
+    
+    
 
     render(){
         console.log("App.render")
-        const {fetchedProducts, fetchedStockEvents} = this.state
+        const {fetchedProducts, fetchedStockEvents, searchData} = this.state
+        let svalues = {} //no se actualiza porque?
+        //console.log(searchData)
+        //console.log(svalues)
         return (
             <div className ='inv-container'>
-                <h1>Inventario</h1>
-                <InvOptions/>
-                <StockEventsTable
-                    products={fetchedProducts} 
-                    stockEvents = {fetchedStockEvents}
-                />
+                <div class = 'row'>
+                    <div class = 'col'><div className = "usr-cont">Bienvenido: USUARIO NULL</div></div>
+                    <div class = 'col'><div className = "inv-til">Inventario</div></div>
+                    <div class = 'col'></div>
+                </div>
+                <div className="mb-2"><InvOptions/></div>
+                <div class = "table-container">
+                    <Search handleChange={this.handleChange} svalues = {this.state.searchData}/>
+                    <StockEventsTable
+                        searchValues={searchData}
+                        products={fetchedProducts} 
+                        stockEvents = {fetchedStockEvents}
+                    />
+                </div>
             </div>
         );
     }

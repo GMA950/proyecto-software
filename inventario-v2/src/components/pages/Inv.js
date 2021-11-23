@@ -1,9 +1,10 @@
 import React from 'react'
+//import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../App.css'
 import InvSection from '../InvSection';
 import Navbar from '../Navbar2';
 
-export default function SignUp () {
+export default function Inv () {
     return (
         <>
         <Navbar />

@@ -1,7 +1,8 @@
 import React, {useState, useEffect}  from 'react';
 import { Link } from 'react-router-dom';
+//import 'bootstrap/dist/css/bootstrap.min.css';
 import './Navbar1.css';
-import { Button } from './Button';
+//import { Button } from './Button';
 
 function Navbar() {
     const [click, setClick] = useState(false);
@@ -27,7 +28,7 @@ function Navbar() {
     return (
         <>
             <nav className='navbar'>
-                <div className='navbar-container2'>
+                <div className='navbar-container'>
                     <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
                         Valrepuestos<i className="fab fa-typo3"/>
                     </Link>

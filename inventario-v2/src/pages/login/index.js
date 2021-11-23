@@ -16,7 +16,7 @@ export default function Login(){
             console.log(response.data);
         })
         alert(`${username}, ${password}`)
-        pushLocation.push('/sign-up')
+        pushLocation.push('/inv')
     }
     return (
         <div className='Login-container'>

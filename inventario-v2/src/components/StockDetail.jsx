@@ -1,4 +1,5 @@
 import React from "react";
+import Table from 'react-bootstrap/Table';
 
 class StockDetail extends React.Component{
 
@@ -8,13 +9,26 @@ class StockDetail extends React.Component{
 
 
     render(){
-        const {name, total, stockEvents} = this.props
+        const {id, code, name, cat, fab, model, ver, year, price, total, stockEvents} = this.props
         const {show} = this.state
         return(
-            <div className="StockDetail" onClick={() => this.setState({show: !show})}>
-                <h2>Product: {name} | Total: {total}</h2>
-                {show &&
-                    <div>
+            <>
+            <tr className="StockDetail" onClick={() => this.setState({show: !show})}>
+                {/*<h2>Product: {name} | Total: {total}</h2>*/}
+                <td>{id}</td>{/*id*/}
+                <td>{code}</td> {/*codigo*/}
+                <td>{name}</td> {/*nombre*/}
+                <td>{cat}</td> {/*categoria*/}
+                <td>{fab}</td> {/*fabricante*/}
+                <td>{model}</td> {/*modelo*/}
+                <td>{ver}</td> {/*version*/}
+                <td>{year}</td> {/*año*/}
+                <td>{price}</td> {/*precio*/}
+                <td>{total}</td>
+            </tr>
+            {show &&
+                <tr>
+                    <td colspan = "10" id="especial">
                         {stockEvents.map(event => (
                             <div className = "StockEventTable__Card">
                                 <p>Id: {event.id}</p>
@@ -23,9 +37,11 @@ class StockDetail extends React.Component{
                                 <p>Product Name: {event.product.name}</p>
                             </div>
                         ))}
-                    </div>
-                }
-            </div>
+                    </td>
+                </tr>
+            }
+            </>
+            
         )
     }
 }

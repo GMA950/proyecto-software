@@ -1,8 +1,9 @@
 import React, {useState, useEffect}  from 'react';
 import { Link } from 'react-router-dom';
+//import 'bootstrap/dist/css/bootstrap.min.css';
 import './Navbar1.css';
-import { Button } from './Button';
-  
+import { Button2 } from './Button2';
+import { useNavigate } from 'react-router-dom'   
 
 function Navbar() {
     const [click, setClick] = useState(false);
@@ -27,7 +28,7 @@ function Navbar() {
 
     return (
         <>
-            <nav className='navbar'>
+            <nav className='navbar2'>
                 <div className='navbar-container'>
                     <div className='navbar-logo' >
                         Valrepuestos<i className="fab fa-typo3"/>
@@ -39,17 +40,17 @@ function Navbar() {
                     
                     <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                         <li className='nav-item'>
-                            <Link to='/sign-up' className='nav-links' onClick={closeMobileMenu}>
+                            <Link to='/inv' className='nav-links' onClick={closeMobileMenu}>
                                 INICIO
                             </Link>
                         </li>
                         <li className='nav-item'>
-                            <Link to='/sign-up' className='nav-links' onClick={closeMobileMenu}>
+                            <Link to='/inv' className='nav-links' onClick={closeMobileMenu}>
                                 INVENTARIO
                             </Link>
                         </li>
                         <li className='nav-item'>
-                            <Link to='/sign-up' className='nav-links' onClick={closeMobileMenu}>
+                            <Link to='/Products' className='nav-links' onClick={closeMobileMenu}>
                                 CONFIGURACIÓN
                             </Link>
                         </li>
@@ -60,7 +61,8 @@ function Navbar() {
                         </li>
                     </ul>
                     {/*{button && <Button buttonStyle='btn--outline'>CERRAR SESIÓN</Button>}*/}
-                    {button && <Button buttonStyle='btn--outline'><Link to='/' className='nav-links2'>CERRAR SESIÓN</Link></Button>}
+                    {/*{button && <Button2 dir = '/' buttonStyle='btn2--outline'><Link to='/' className='nav-links2'>CERRAR SESIÓN</Link></Button2>}*/}
+                    {button && <Button2 dir = '/' buttonStyle='btn2--outline'>CERRAR SESIÓN</Button2>}
                 </div>
             </nav>
         </>
