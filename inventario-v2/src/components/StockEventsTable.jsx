@@ -51,9 +51,7 @@ function StockEventsTable(props){
                                 && product.ver.toLowerCase().includes(searchValues.ver.toLowerCase())){ //product.name.toLowerCase().includes(searchValues.name.toLowerCase())
                                 if(searchValues.year!="" || searchValues.stock!="" || searchValues.price!=""){
 
-                                    const {id} = product
-                                    const relevantStockEvents = stockEvents.filter(se => se.product.id === product.id)
-                                    const stock = relevantStockEvents.reduce((accumulator, currentElement) => {return accumulator + currentElement.qty}, 0)
+                                    var stock = product.stock
 
                                     //console.log(stockTotal)
 
@@ -109,19 +107,19 @@ function StockEventsTable(props){
                             //return product
                         }
                     }).map((product, i) => {
-                        const {id} = product
+                        //const {id} = product
 
                         const relevantStockEvents = stockEvents.filter(se => se.product.id === product.id)
 
-                        const stockTotal = relevantStockEvents.reduce((accumulator, currentElement) => {
+                        /*const stockTotal = relevantStockEvents.reduce((accumulator, currentElement) => {
                             return accumulator + currentElement.qty
-                        }, 0)
+                        }, 0)*/
                         return(
                             <>
                             {/*<div className = "StockEventTable__ProductContainer">*/}
                             {/*{product.id} */}
                                     < StockDetail 
-                                        id = {i+1} 
+                                        id = {product.id} 
                                         code = {product.code}
                                         name = {product.name}
                                         cat = {product.cat}
@@ -130,8 +128,9 @@ function StockEventsTable(props){
                                         ver = {product.ver}
                                         year = {product.year}
                                         price = {product.price}
-
-                                        total  = {stockTotal} 
+                                        /*total  = {stockTotal}*/
+                                        total  = {product.stock}   
+                                        /*stockEvents = {relevantStockEvents}*/
                                         stockEvents = {relevantStockEvents} 
                                     />
                                     

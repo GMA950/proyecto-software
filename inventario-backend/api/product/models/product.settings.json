@@ -2,8 +2,7 @@
   "kind": "collectionType",
   "collectionName": "products",
   "info": {
-    "name": "product",
-    "description": ""
+    "name": "product"
   },
   "options": {
     "increments": true,
@@ -13,7 +12,9 @@
   "pluginOptions": {},
   "attributes": {
     "code": {
-      "type": "string"
+      "type": "string",
+      "unique": true,
+      "required": true
     },
     "name": {
       "type": "string"
@@ -34,10 +35,17 @@
       "type": "string"
     },
     "price": {
+      "default": 0,
       "type": "integer"
     },
     "critic": {
-      "type": "integer"
+      "type": "integer",
+      "default": 1
+    },
+    "stock": {
+      "type": "integer",
+      "default": 0,
+      "required": false
     },
     "stockevents": {
       "via": "product",

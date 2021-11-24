@@ -12,9 +12,9 @@ import Search from './Search';
 // Products
 
 const fetchedProducts = [
-    {id: 1, code: '0', name: "Barra Torsión IZQ", cat: "Suspensión", fab: "Chevrolet", model: "Dmax", ver:"Todas", year: "2006-2014", price: 40000, critic: 10},
-    {id: 2, code: '0', name: "Optico IZQ", cat: "Opticos", fab: "Mazda", model: "626", ver:"FS DOHC 16 VALV 4X2", year: "2000-2004", price: 70000, critic: 10},
-    {id: 3, code: '0', name: "Bateria Auto 60AH 550CCA",cat: "Electricos", fab: "Hankook", model: "", ver:"", year: "", price: 64990, critic: 10}
+    {id: 1, code: '0', name: "Barra Torsión IZQ", cat: "Suspensión", fab: "Chevrolet", model: "Dmax", ver:"Todas", year: "2006-2014", price: 40000, critic: 10, stock:20},
+    {id: 2, code: '0', name: "Optico IZQ", cat: "Opticos", fab: "Mazda", model: "626", ver:"FS DOHC 16 VALV 4X2", year: "2000-2004", price: 70000, critic: 10, stock:20},
+    {id: 3, code: '0', name: "Bateria Auto 60AH 550CCA",cat: "Electricos", fab: "Hankook", model: "", ver:"", year: "", price: 64990, critic: 10, stock:20}
 ]
 
 // stock events
