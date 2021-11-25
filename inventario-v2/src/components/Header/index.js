@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import useUser from "hooks/useUser";
 import { Link } from "react-router-dom";
 import './header.css'
@@ -9,12 +9,17 @@ export default function Header(){
     //const isLogged = true
     const [isActive, setActive] = useState(false)
     const pushLocation= useHistory()
-    const {isLogged,logout} = useUser()
+    const {userName,isLogged,logout} = useUser()
+
+
 
     const handleClick = e =>{
         e.preventDefault()
-        pushLocation.push('/')
+        alert(`${userName}`)
+        console.log('estado de loged antes de cerrar sesion',isLogged)
         logout()
+        console.log('estado de loged despues de cerrar sesion', isLogged)
+        pushLocation.push('/')
     }
     const toggleClassName = () =>{
         
@@ -31,6 +36,9 @@ export default function Header(){
                         <div className= 'navbar-container'>
                             <div className='nav-logo' >
                                 Valrepuestos<i className="fab fa-typo3"/>
+                            </div>
+                            <div>
+                                <i className='mensaje-bienvenido'> Hello, {userName}! </i>
                             </div>
        
                             <button className= 'nav-menu-icon' onClick = {toggleClassName}>
