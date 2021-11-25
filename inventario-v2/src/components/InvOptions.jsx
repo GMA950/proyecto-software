@@ -20,7 +20,7 @@ function InvOptions() {
         </div>
         <div className="mbr">
             <div className="bt3">
-                <Button variant="primary" size="lg">Importar</Button>
+                {/*<Button variant="primary" size="lg">Importar</Button>*/}
             </div>
             <div className="bt3">
                 <Button variant="success" size="lg">Exportar</Button>

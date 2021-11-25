@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 24-11-2021 a las 14:37:13
+-- Tiempo de generación: 25-11-2021 a las 18:52:16
 -- Versión del servidor: 8.0.27-0ubuntu0.21.10.1
 -- Versión de PHP: 8.0.8
 
@@ -65,9 +65,9 @@ INSERT INTO `core_store` (`id`, `key`, `value`, `type`, `environment`, `tag`) VA
 (22, 'plugin_users-permissions_email', '{\"reset_password\":{\"display\":\"Email.template.reset_password\",\"icon\":\"sync\",\"options\":{\"from\":{\"name\":\"Administration Panel\",\"email\":\"no-reply@strapi.io\"},\"response_email\":\"\",\"object\":\"Reset password\",\"message\":\"<p>We heard that you lost your password. Sorry about that!</p>\\n\\n<p>But don’t worry! You can use the following link to reset your password:</p>\\n<p><%= URL %>?code=<%= TOKEN %></p>\\n\\n<p>Thanks.</p>\"}},\"email_confirmation\":{\"display\":\"Email.template.email_confirmation\",\"icon\":\"check-square\",\"options\":{\"from\":{\"name\":\"Administration Panel\",\"email\":\"no-reply@strapi.io\"},\"response_email\":\"\",\"object\":\"Account confirmation\",\"message\":\"<p>Thank you for registering!</p>\\n\\n<p>You have to confirm your email address. Please click on the link below.</p>\\n\\n<p><%= URL %>?confirmation=<%= CODE %></p>\\n\\n<p>Thanks.</p>\"}}}', 'object', '', ''),
 (23, 'plugin_users-permissions_advanced', '{\"unique_email\":true,\"allow_register\":true,\"email_confirmation\":false,\"email_reset_password\":null,\"email_confirmation_redirection\":null,\"default_role\":\"authenticated\"}', 'object', '', ''),
 (24, 'core_admin_auth', '{\"providers\":{\"autoRegister\":false,\"defaultRole\":null}}', 'object', '', ''),
-(25, 'model_def_application::product.product', '{\"uid\":\"application::product.product\",\"collectionName\":\"products\",\"kind\":\"collectionType\",\"info\":{\"name\":\"product\"},\"options\":{\"increments\":true,\"timestamps\":[\"created_at\",\"updated_at\"],\"draftAndPublish\":true},\"pluginOptions\":{},\"attributes\":{\"code\":{\"type\":\"string\",\"unique\":true,\"required\":true},\"name\":{\"type\":\"string\"},\"cat\":{\"type\":\"string\"},\"fab\":{\"type\":\"string\"},\"model\":{\"type\":\"string\"},\"ver\":{\"type\":\"string\"},\"year\":{\"type\":\"string\"},\"price\":{\"default\":0,\"type\":\"integer\"},\"critic\":{\"type\":\"integer\",\"default\":1},\"stock\":{\"type\":\"integer\",\"default\":0,\"required\":false},\"stockevents\":{\"via\":\"product\",\"collection\":\"stockevent\",\"isVirtual\":true},\"published_at\":{\"type\":\"datetime\",\"configurable\":false,\"writable\":true,\"visible\":false},\"created_by\":{\"model\":\"user\",\"plugin\":\"admin\",\"configurable\":false,\"writable\":false,\"visible\":false,\"private\":true},\"updated_by\":{\"model\":\"user\",\"plugin\":\"admin\",\"configurable\":false,\"writable\":false,\"visible\":false,\"private\":true}}}', 'object', NULL, NULL),
-(26, 'plugin_content_manager_configuration_content_types::application::product.product', '{\"uid\":\"application::product.product\",\"settings\":{\"bulkable\":true,\"filterable\":true,\"searchable\":true,\"pageSize\":20,\"mainField\":\"code\",\"defaultSortBy\":\"code\",\"defaultSortOrder\":\"ASC\"},\"metadatas\":{\"ver\":{\"edit\":{\"label\":\"Ver\",\"description\":\"\",\"placeholder\":\"\",\"visible\":true,\"editable\":true},\"list\":{\"label\":\"Ver\",\"searchable\":true,\"sortable\":true}},\"fab\":{\"edit\":{\"label\":\"Fab\",\"description\":\"\",\"placeholder\":\"\",\"visible\":true,\"editable\":true},\"list\":{\"label\":\"Fab\",\"searchable\":true,\"sortable\":true}},\"price\":{\"edit\":{\"label\":\"Price\",\"description\":\"\",\"placeholder\":\"\",\"visible\":true,\"editable\":true},\"list\":{\"label\":\"Price\",\"searchable\":true,\"sortable\":true}},\"model\":{\"edit\":{\"label\":\"Model\",\"description\":\"\",\"placeholder\":\"\",\"visible\":true,\"editable\":true},\"list\":{\"label\":\"Model\",\"searchable\":true,\"sortable\":true}},\"created_at\":{\"edit\":{\"label\":\"Created_at\",\"description\":\"\",\"placeholder\":\"\",\"visible\":false,\"editable\":true},\"list\":{\"label\":\"Created_at\",\"searchable\":true,\"sortable\":true}},\"name\":{\"edit\":{\"label\":\"Name\",\"description\":\"\",\"placeholder\":\"\",\"visible\":true,\"editable\":true},\"list\":{\"label\":\"Name\",\"searchable\":true,\"sortable\":true}},\"code\":{\"edit\":{\"label\":\"Code\",\"description\":\"\",\"placeholder\":\"\",\"visible\":true,\"editable\":true},\"list\":{\"label\":\"Code\",\"searchable\":true,\"sortable\":true}},\"stockevents\":{\"edit\":{\"label\":\"Stockevents\",\"description\":\"\",\"placeholder\":\"\",\"visible\":true,\"editable\":true,\"mainField\":\"id\"},\"list\":{\"label\":\"Stockevents\",\"searchable\":false,\"sortable\":false}},\"critic\":{\"edit\":{\"label\":\"Critic\",\"description\":\"\",\"placeholder\":\"\",\"visible\":true,\"editable\":true},\"list\":{\"label\":\"Critic\",\"searchable\":true,\"sortable\":true}},\"stock\":{\"edit\":{\"label\":\"Stock\",\"description\":\"\",\"placeholder\":\"\",\"visible\":true,\"editable\":true},\"list\":{\"label\":\"Stock\",\"searchable\":true,\"sortable\":true}},\"cat\":{\"edit\":{\"label\":\"Cat\",\"description\":\"\",\"placeholder\":\"\",\"visible\":true,\"editable\":true},\"list\":{\"label\":\"Cat\",\"searchable\":true,\"sortable\":true}},\"updated_at\":{\"edit\":{\"label\":\"Updated_at\",\"description\":\"\",\"placeholder\":\"\",\"visible\":false,\"editable\":true},\"list\":{\"label\":\"Updated_at\",\"searchable\":true,\"sortable\":true}},\"id\":{\"edit\":{},\"list\":{\"label\":\"Id\",\"searchable\":true,\"sortable\":true}},\"year\":{\"edit\":{\"label\":\"Year\",\"description\":\"\",\"placeholder\":\"\",\"visible\":true,\"editable\":true},\"list\":{\"label\":\"Year\",\"searchable\":true,\"sortable\":true}}},\"layouts\":{\"edit\":[[{\"name\":\"code\",\"size\":6},{\"name\":\"name\",\"size\":6}],[{\"name\":\"cat\",\"size\":6},{\"name\":\"fab\",\"size\":6}],[{\"name\":\"model\",\"size\":6},{\"name\":\"ver\",\"size\":6}],[{\"name\":\"year\",\"size\":6},{\"name\":\"price\",\"size\":4}],[{\"name\":\"critic\",\"size\":4},{\"name\":\"stock\",\"size\":4}]],\"editRelations\":[\"stockevents\"],\"list\":[\"id\",\"code\",\"name\",\"cat\",\"stock\",\"price\"]}}', 'object', '', ''),
-(27, 'model_def_application::stockevent.stockevent', '{\"uid\":\"application::stockevent.stockevent\",\"collectionName\":\"stockevents\",\"kind\":\"collectionType\",\"info\":{\"name\":\"stockevent\",\"description\":\"\"},\"options\":{\"increments\":true,\"timestamps\":[\"created_at\",\"updated_at\"],\"draftAndPublish\":true},\"pluginOptions\":{},\"attributes\":{\"type\":{\"type\":\"enumeration\",\"enum\":[\"add\",\"remove\"]},\"qty\":{\"type\":\"integer\"},\"product\":{\"model\":\"product\",\"via\":\"stockevents\"},\"published_at\":{\"type\":\"datetime\",\"configurable\":false,\"writable\":true,\"visible\":false},\"created_by\":{\"model\":\"user\",\"plugin\":\"admin\",\"configurable\":false,\"writable\":false,\"visible\":false,\"private\":true},\"updated_by\":{\"model\":\"user\",\"plugin\":\"admin\",\"configurable\":false,\"writable\":false,\"visible\":false,\"private\":true}}}', 'object', NULL, NULL),
+(25, 'model_def_application::product.product', '{\"uid\":\"application::product.product\",\"collectionName\":\"products\",\"kind\":\"collectionType\",\"info\":{\"name\":\"product\",\"description\":\"\"},\"options\":{\"increments\":true,\"timestamps\":[\"created_at\",\"updated_at\"],\"draftAndPublish\":true},\"pluginOptions\":{},\"attributes\":{\"code\":{\"type\":\"string\",\"unique\":true,\"required\":true},\"name\":{\"type\":\"string\"},\"cat\":{\"type\":\"string\"},\"fab\":{\"type\":\"string\"},\"model\":{\"type\":\"string\"},\"ver\":{\"type\":\"string\"},\"year\":{\"type\":\"string\"},\"price\":{\"default\":0,\"type\":\"integer\"},\"critic\":{\"type\":\"integer\",\"default\":1},\"stock\":{\"type\":\"integer\",\"default\":0,\"required\":false},\"stockevents\":{\"via\":\"product\",\"collection\":\"stockevent\",\"isVirtual\":true},\"ubicacion\":{\"type\":\"string\",\"default\":\"Bodega\"},\"origen\":{\"type\":\"string\"},\"nota\":{\"type\":\"text\"},\"published_at\":{\"type\":\"datetime\",\"configurable\":false,\"writable\":true,\"visible\":false},\"created_by\":{\"model\":\"user\",\"plugin\":\"admin\",\"configurable\":false,\"writable\":false,\"visible\":false,\"private\":true},\"updated_by\":{\"model\":\"user\",\"plugin\":\"admin\",\"configurable\":false,\"writable\":false,\"visible\":false,\"private\":true}}}', 'object', NULL, NULL),
+(26, 'plugin_content_manager_configuration_content_types::application::product.product', '{\"uid\":\"application::product.product\",\"settings\":{\"bulkable\":true,\"filterable\":true,\"searchable\":true,\"pageSize\":20,\"mainField\":\"code\",\"defaultSortBy\":\"id\",\"defaultSortOrder\":\"ASC\"},\"metadatas\":{\"ver\":{\"edit\":{\"label\":\"Ver\",\"description\":\"\",\"placeholder\":\"\",\"visible\":true,\"editable\":true},\"list\":{\"label\":\"Ver\",\"searchable\":true,\"sortable\":true}},\"fab\":{\"edit\":{\"label\":\"Fab\",\"description\":\"\",\"placeholder\":\"\",\"visible\":true,\"editable\":true},\"list\":{\"label\":\"Fab\",\"searchable\":true,\"sortable\":true}},\"price\":{\"edit\":{\"label\":\"Price\",\"description\":\"\",\"placeholder\":\"\",\"visible\":true,\"editable\":true},\"list\":{\"label\":\"Price\",\"searchable\":true,\"sortable\":true}},\"model\":{\"edit\":{\"label\":\"Model\",\"description\":\"\",\"placeholder\":\"\",\"visible\":true,\"editable\":true},\"list\":{\"label\":\"Model\",\"searchable\":true,\"sortable\":true}},\"created_at\":{\"edit\":{\"label\":\"Created_at\",\"description\":\"\",\"placeholder\":\"\",\"visible\":false,\"editable\":true},\"list\":{\"label\":\"Created_at\",\"searchable\":true,\"sortable\":true}},\"origen\":{\"edit\":{\"label\":\"Origen\",\"description\":\"\",\"placeholder\":\"\",\"visible\":true,\"editable\":true},\"list\":{\"label\":\"Origen\",\"searchable\":true,\"sortable\":true}},\"name\":{\"edit\":{\"label\":\"Name\",\"description\":\"\",\"placeholder\":\"\",\"visible\":true,\"editable\":true},\"list\":{\"label\":\"Name\",\"searchable\":true,\"sortable\":true}},\"code\":{\"edit\":{\"label\":\"Code\",\"description\":\"\",\"placeholder\":\"\",\"visible\":true,\"editable\":true},\"list\":{\"label\":\"Code\",\"searchable\":true,\"sortable\":true}},\"nota\":{\"edit\":{\"label\":\"Nota\",\"description\":\"\",\"placeholder\":\"\",\"visible\":true,\"editable\":true},\"list\":{\"label\":\"Nota\",\"searchable\":true,\"sortable\":true}},\"stockevents\":{\"edit\":{\"label\":\"Stockevents\",\"description\":\"\",\"placeholder\":\"\",\"visible\":true,\"editable\":true,\"mainField\":\"id\"},\"list\":{\"label\":\"Stockevents\",\"searchable\":false,\"sortable\":false}},\"critic\":{\"edit\":{\"label\":\"Critic\",\"description\":\"\",\"placeholder\":\"\",\"visible\":true,\"editable\":true},\"list\":{\"label\":\"Critic\",\"searchable\":true,\"sortable\":true}},\"stock\":{\"edit\":{\"label\":\"Stock\",\"description\":\"\",\"placeholder\":\"\",\"visible\":true,\"editable\":true},\"list\":{\"label\":\"Stock\",\"searchable\":true,\"sortable\":true}},\"cat\":{\"edit\":{\"label\":\"Cat\",\"description\":\"\",\"placeholder\":\"\",\"visible\":true,\"editable\":true},\"list\":{\"label\":\"Cat\",\"searchable\":true,\"sortable\":true}},\"updated_at\":{\"edit\":{\"label\":\"Updated_at\",\"description\":\"\",\"placeholder\":\"\",\"visible\":false,\"editable\":true},\"list\":{\"label\":\"Updated_at\",\"searchable\":true,\"sortable\":true}},\"id\":{\"edit\":{},\"list\":{\"label\":\"Id\",\"searchable\":true,\"sortable\":true}},\"year\":{\"edit\":{\"label\":\"Year\",\"description\":\"\",\"placeholder\":\"\",\"visible\":true,\"editable\":true},\"list\":{\"label\":\"Year\",\"searchable\":true,\"sortable\":true}},\"ubicacion\":{\"edit\":{\"label\":\"Ubicacion\",\"description\":\"\",\"placeholder\":\"\",\"visible\":true,\"editable\":true},\"list\":{\"label\":\"Ubicacion\",\"searchable\":true,\"sortable\":true}}},\"layouts\":{\"edit\":[[{\"name\":\"code\",\"size\":6},{\"name\":\"name\",\"size\":6}],[{\"name\":\"cat\",\"size\":6},{\"name\":\"fab\",\"size\":6}],[{\"name\":\"model\",\"size\":6},{\"name\":\"ver\",\"size\":6}],[{\"name\":\"year\",\"size\":6},{\"name\":\"price\",\"size\":4}],[{\"name\":\"ubicacion\",\"size\":6},{\"name\":\"origen\",\"size\":6}],[{\"name\":\"critic\",\"size\":4},{\"name\":\"nota\",\"size\":6}],[{\"name\":\"stock\",\"size\":4}]],\"editRelations\":[\"stockevents\"],\"list\":[\"id\",\"code\",\"name\",\"cat\",\"fab\",\"stock\",\"price\"]}}', 'object', '', ''),
+(27, 'model_def_application::stockevent.stockevent', '{\"uid\":\"application::stockevent.stockevent\",\"collectionName\":\"stockevents\",\"kind\":\"collectionType\",\"info\":{\"name\":\"stockevent\",\"description\":\"\"},\"options\":{\"increments\":true,\"timestamps\":[\"created_at\",\"updated_at\"],\"draftAndPublish\":true},\"pluginOptions\":{},\"attributes\":{\"type\":{\"type\":\"enumeration\",\"enum\":[\"add\",\"remove\"]},\"qty\":{\"type\":\"integer\"},\"product\":{\"via\":\"stockevents\",\"model\":\"product\"},\"published_at\":{\"type\":\"datetime\",\"configurable\":false,\"writable\":true,\"visible\":false},\"created_by\":{\"model\":\"user\",\"plugin\":\"admin\",\"configurable\":false,\"writable\":false,\"visible\":false,\"private\":true},\"updated_by\":{\"model\":\"user\",\"plugin\":\"admin\",\"configurable\":false,\"writable\":false,\"visible\":false,\"private\":true}}}', 'object', NULL, NULL),
 (28, 'plugin_content_manager_configuration_content_types::application::stockevent.stockevent', '{\"uid\":\"application::stockevent.stockevent\",\"settings\":{\"bulkable\":true,\"filterable\":true,\"searchable\":true,\"pageSize\":10,\"mainField\":\"id\",\"defaultSortBy\":\"id\",\"defaultSortOrder\":\"ASC\"},\"metadatas\":{\"id\":{\"edit\":{},\"list\":{\"label\":\"Id\",\"searchable\":true,\"sortable\":true}},\"type\":{\"edit\":{\"label\":\"Type\",\"description\":\"\",\"placeholder\":\"\",\"visible\":true,\"editable\":true},\"list\":{\"label\":\"Type\",\"searchable\":true,\"sortable\":true}},\"qty\":{\"edit\":{\"label\":\"Qty\",\"description\":\"\",\"placeholder\":\"\",\"visible\":true,\"editable\":true},\"list\":{\"label\":\"Qty\",\"searchable\":true,\"sortable\":true}},\"product\":{\"edit\":{\"label\":\"Product\",\"description\":\"\",\"placeholder\":\"\",\"visible\":true,\"editable\":true,\"mainField\":\"code\"},\"list\":{\"label\":\"Product\",\"searchable\":true,\"sortable\":true}},\"created_at\":{\"edit\":{\"label\":\"Created_at\",\"description\":\"\",\"placeholder\":\"\",\"visible\":false,\"editable\":true},\"list\":{\"label\":\"Created_at\",\"searchable\":true,\"sortable\":true}},\"updated_at\":{\"edit\":{\"label\":\"Updated_at\",\"description\":\"\",\"placeholder\":\"\",\"visible\":false,\"editable\":true},\"list\":{\"label\":\"Updated_at\",\"searchable\":true,\"sortable\":true}}},\"layouts\":{\"list\":[\"id\",\"created_at\",\"updated_at\",\"type\"],\"edit\":[[{\"name\":\"type\",\"size\":6},{\"name\":\"qty\",\"size\":4}]],\"editRelations\":[\"product\"]}}', 'object', '', '');
 
 -- --------------------------------------------------------
@@ -115,34 +115,37 @@ CREATE TABLE `products` (
   `created_by` int DEFAULT NULL,
   `updated_by` int DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `ubicacion` varchar(255) DEFAULT NULL,
+  `origen` varchar(255) DEFAULT NULL,
+  `nota` longtext
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `products`
 --
 
-INSERT INTO `products` (`id`, `code`, `name`, `cat`, `fab`, `model`, `ver`, `year`, `price`, `critic`, `stock`, `published_at`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
-(1, '1405', 'Fuelle Homocinetica BT-2047', 'Fuelles', 'CIB', NULL, NULL, NULL, 500, 1, 20, '2021-11-24 17:50:51', 1, 1, '2021-11-24 20:50:50', '2021-11-24 20:50:51'),
-(2, '1406', 'Fuelle Homocinetica  VW-1-1003 1845', 'Fuelles', 'Genérico', NULL, NULL, NULL, 1000, 1, 10, '2021-11-24 17:53:03', 1, 1, '2021-11-24 20:52:42', '2021-11-24 20:53:03'),
-(3, '4888', 'Empaquetadura Culata KGK 11141-71C00', 'Empaquetadura Culata', 'KGK', NULL, NULL, NULL, 8990, 1, 5, '2021-11-24 17:54:38', 1, 1, '2021-11-24 20:54:36', '2021-11-24 20:56:02'),
-(4, '4923', 'Empaquetadura Culata KP 11141-79F10', 'Empaquetadura Culata', 'KP', NULL, NULL, NULL, 5990, 1, 3, '2021-11-24 17:56:06', 1, 1, '2021-11-24 20:55:41', '2021-11-24 20:56:06'),
-(5, '4001', 'Empaquetadura Válvulas GOMA emptapaved000', 'Empaquetadura Válvulas', 'Nissan', '', '', NULL, 2990, 1, 5, '2021-11-24 17:59:20', 1, 1, '2021-11-24 20:58:58', '2021-11-24 20:59:28'),
-(6, '4002', 'Empaquetadura Válvulas GOMA emptapav13700', 'Empaquetadura Válvulas', 'Hyundai', NULL, NULL, NULL, 19990, 1, 10, '2021-11-24 18:01:15', 1, 1, '2021-11-24 21:01:13', '2021-11-24 21:01:15'),
-(7, '5005', 'Carbones Alternador 08x18x5 mm', 'Electrico', 'Genérico', NULL, NULL, NULL, 790, 1, 10, '2021-11-24 18:03:06', 1, 1, '2021-11-24 21:03:04', '2021-11-24 21:03:06'),
-(8, '6001', 'Bomba de Agua GMB GWSU12A', 'Refrigeración', 'Subaru', 'Todos', 'Todos', '1990-2013', 23990, 1, 8, '2021-11-24 18:05:30', 1, 1, '2021-11-24 21:05:28', '2021-11-24 21:05:30'),
-(9, '6002', 'Bomba de Agua DGP GWD32A', 'Refrigeración', 'Daihatsu', 'Todos', 'Todos', NULL, 16990, 1, 4, '2021-11-24 18:07:03', 1, 1, '2021-11-24 21:07:02', '2021-11-24 21:07:03'),
-(10, '7023', 'Espejo Derecho', 'Espejos', 'Hyundai', 'Porter H100', 'Todos', '2004-2005', 24990, 1, 1, '2021-11-24 18:09:13', 1, 1, '2021-11-24 21:09:09', '2021-11-24 21:09:13'),
-(11, '7024', 'Espejo Izquierdo', 'Espejos', 'Kia', 'Rio', 'Todos', '2005-2012', 15990, 1, 2, '2021-11-24 18:10:22', 1, 1, '2021-11-24 21:10:20', '2021-11-24 21:10:22'),
-(12, '7025', 'Espejo Izquierdo', 'Espejos', 'Chevrolet', 'Sail', 'Todos', '2011-2012', 31990, 1, 2, '2021-11-24 18:11:29', 1, 1, '2021-11-24 21:11:27', '2021-11-24 21:11:29'),
-(13, '7026', 'Espejo Derecho', 'Espejos', 'Chevrolet', 'Sail', 'Todos', '2011-2012', 31990, 1, 2, '2021-11-24 18:12:44', 1, 1, '2021-11-24 21:12:10', '2021-11-24 21:12:44'),
-(14, '8050', 'Optico Delantero Derecho', 'Opticos', 'Samsung', 'SM3', 'Todos', '2006-2014', 69990, 1, 3, '2021-11-24 18:15:20', 1, 1, '2021-11-24 21:15:17', '2021-11-24 21:15:20'),
-(15, '8051', 'Optico Delantero Izquierdo', 'Opticos', 'Samsung', 'SM3', 'Todos', '2006-2014', 69990, 1, 3, '2021-11-24 18:15:55', 1, 1, '2021-11-24 21:15:53', '2021-11-24 21:15:55'),
-(16, '3050', 'Piola Acelerador', 'Alimentación', 'Suzuki', 'Super Carry', 'Todos', '1986', 2006, 1, 10, '2021-11-24 18:16:57', 1, 1, '2021-11-24 21:16:54', '2021-11-24 21:16:57'),
-(17, '2071', 'Varilla Nivel Aceite', 'Aceite', 'JAC', '137-S3', 'Todos', '2010-2019', 5990, 1, 4, '2021-11-24 18:18:29', 1, 1, '2021-11-24 21:18:27', '2021-11-24 21:18:29'),
-(18, '2068', 'Filtro Aceite DGP 26300-35504', 'Aceite', 'DGP', NULL, NULL, NULL, 2990, 1, 15, '2021-11-24 18:20:12', 1, 1, '2021-11-24 21:20:11', '2021-11-24 21:20:12'),
-(19, '2072', 'Filtro Aceite TROOP 26300-02500', 'Aceite', 'TROOP', NULL, NULL, NULL, 1990, 1, 14, '2021-11-24 18:21:22', 1, 1, '2021-11-24 21:20:34', '2021-11-24 21:21:22'),
-(20, '1512', 'Balatas de Frenos Trasera 53200M68KK00', 'Balatas Traseras', 'Suzuki', 'Celerio', 'Todos', '2009-2015', 29990, 1, 8, '2021-11-24 18:23:39', 1, 1, '2021-11-24 21:23:37', '2021-11-24 21:23:39');
+INSERT INTO `products` (`id`, `code`, `name`, `cat`, `fab`, `model`, `ver`, `year`, `price`, `critic`, `stock`, `published_at`, `created_by`, `updated_by`, `created_at`, `updated_at`, `ubicacion`, `origen`, `nota`) VALUES
+(1, '1405', 'Fuelle Homocinetica  CIB BT-2047', 'Fuelles', 'Daihatsu', 'Charade', 'Todos', '1995-2000', 500, 1, 20, '2021-11-25 19:39:09', 1, 1, '2021-11-24 20:50:50', '2021-11-25 22:54:55', 'Mostrador', 'China', 'Se recomienda comparar con la muestra del cliente'),
+(2, '1406', 'Fuelle Homocinetica  VW-1-1003 1845', 'Fuelles', 'Volkswagen', 'Golf Vento', 'Golf A4', '1991-2005', 1000, 1, 10, '2021-11-25 19:39:38', 1, 1, '2021-11-24 20:52:42', '2021-11-25 22:53:48', 'Mostrador', 'China', 'Para modelos Golf, Vento y Golf A4'),
+(3, '4888', 'Empaquetadura Culata KGK 11141-71C00', 'Empaquetadura Culata', 'Suzuki', 'Fronte Maruti', 'Todos', '1984-2005', 8990, 1, 5, '2021-11-25 19:41:31', 1, 1, '2021-11-24 20:54:36', '2021-11-25 22:51:46', 'Bodega', 'India', 'Para los Maruti es a partir de 1995  y el Fronte se dejó de fabricar en 1990'),
+(4, '4923', 'Empaquetadura Culata KP 11141-79F10', 'Empaquetadura Culata', 'Suzuki', 'Alto', 'Todos', '2005-2010', 5990, 1, 3, '2021-11-25 19:41:42', 1, 1, '2021-11-24 20:55:41', '2021-11-25 22:56:13', 'Mostrador', 'China', 'Modelo 2011 usa una empaquetadura muy diferente'),
+(5, '4001', 'Empaquetadura Válvulas GOMA emptapaved000', 'Empaquetadura Válvulas', 'Nissan', '', '', NULL, 2990, 1, 5, '2021-11-25 19:41:58', 1, 1, '2021-11-24 20:58:58', '2021-11-25 22:41:58', 'Bodega', 'Japon', NULL),
+(6, '4002', 'Empaquetadura Válvulas GOMA emptapav13700', 'Empaquetadura Válvulas', 'Hyundai', NULL, NULL, NULL, 19990, 1, 10, '2021-11-25 19:42:10', 1, 1, '2021-11-24 21:01:13', '2021-11-25 22:42:10', 'Mostrador', 'China', NULL),
+(7, '5005', 'Carbones Alternador 08x18x5 mm', 'Electrico', 'Genérico', NULL, NULL, NULL, 790, 1, 10, '2021-11-25 19:42:23', 1, 1, '2021-11-24 21:03:04', '2021-11-25 22:42:23', 'Mostrador', 'China', NULL),
+(8, '6001', 'Bomba de Agua GMB GWSU12A', 'Refrigeración', 'Subaru', 'Todos', 'Todos', '1990-2013', 23990, 1, 8, '2021-11-25 19:42:43', 1, 1, '2021-11-24 21:05:28', '2021-11-25 22:49:30', 'Bodega', 'Japon', 'En algunos legacy 2014 igual es compatible si traen el motor EJ204'),
+(9, '6002', 'Bomba de Agua DGP GWD32A', 'Refrigeración', 'Daihatsu', 'Todos', 'Todos', NULL, 16990, 1, 4, '2021-11-25 19:43:23', 1, 1, '2021-11-24 21:07:02', '2021-11-25 22:43:23', 'Bodega', 'China', NULL),
+(10, '7023', 'Espejo Derecho', 'Espejos', 'Hyundai', 'Porter H100', 'Todos', '2004-2005', 24990, 1, 1, '2021-11-25 19:43:38', 1, 1, '2021-11-24 21:09:09', '2021-11-25 22:43:38', 'Vitrina', 'China', NULL),
+(11, '7024', 'Espejo Izquierdo', 'Espejos', 'Kia', 'Rio', 'Todos', '2005-2012', 15990, 1, 2, '2021-11-25 19:43:55', 1, 1, '2021-11-24 21:10:20', '2021-11-25 22:43:55', 'Bodega', 'Corea', NULL),
+(12, '7025', 'Espejo Izquierdo', 'Espejos', 'Chevrolet', 'Sail', 'Todos', '2011-2012', 31990, 1, 2, '2021-11-25 19:44:08', 1, 1, '2021-11-24 21:11:27', '2021-11-25 22:44:08', 'Mostrador', 'China', NULL),
+(13, '7026', 'Espejo Derecho', 'Espejos', 'Chevrolet', 'Sail', 'Todos', '2011-2012', 31990, 1, 2, '2021-11-25 19:44:16', 1, 1, '2021-11-24 21:12:10', '2021-11-25 22:44:16', 'Mostrador', 'China', NULL),
+(14, '8050', 'Optico Delantero Derecho', 'Opticos', 'Samsung', 'SM3', 'Todos', '2006-2014', 69990, 1, 3, '2021-11-25 19:44:37', 1, 1, '2021-11-24 21:15:17', '2021-11-25 22:44:37', 'Bodega', 'Corea', NULL),
+(15, '8051', 'Optico Delantero Izquierdo', 'Opticos', 'Samsung', 'SM3', 'Todos', '2006-2014', 69990, 1, 3, '2021-11-25 19:44:45', 1, 1, '2021-11-24 21:15:53', '2021-11-25 22:44:45', 'Bodega', 'Corea', NULL),
+(16, '3050', 'Piola Acelerador', 'Alimentación', 'Suzuki', 'Super Carry', 'Todos', '1986', 2006, 1, 10, '2021-11-25 19:44:56', 1, 1, '2021-11-24 21:16:54', '2021-11-25 22:44:56', 'Bodega', 'India', NULL),
+(17, '2071', 'Varilla Nivel Aceite', 'Aceite', 'JAC', '137-S3', 'Todos', '2010-2019', 5990, 1, 4, '2021-11-25 19:45:20', 1, 1, '2021-11-24 21:18:27', '2021-11-25 22:45:20', 'Mostrador', 'China', NULL),
+(18, '2068', 'Filtro Aceite DGP 26300-35504', 'Aceite', 'DGP', NULL, NULL, NULL, 2990, 1, 15, '2021-11-25 19:45:32', 1, 1, '2021-11-24 21:20:11', '2021-11-25 22:45:32', 'Vitrina', 'China', NULL),
+(19, '2072', 'Filtro Aceite TROOP 26300-02500', 'Aceite', 'TROOP', NULL, NULL, NULL, 1990, 1, 14, '2021-11-25 19:45:42', 1, 1, '2021-11-24 21:20:34', '2021-11-25 22:45:42', 'Mostrador', 'China', NULL),
+(20, '1512', 'Balatas de Frenos Trasera 53200M68KK00', 'Balatas Traseras', 'Suzuki', 'Celerio', 'Todos', '2009-2015', 29990, 1, 8, '2021-11-25 19:46:05', 1, 1, '2021-11-24 21:23:37', '2021-11-25 22:46:05', 'Mostrador', 'India', NULL);
 
 -- --------------------------------------------------------
 
@@ -167,7 +170,7 @@ CREATE TABLE `stockevents` (
 --
 
 INSERT INTO `stockevents` (`id`, `published_at`, `created_by`, `updated_by`, `created_at`, `updated_at`, `type`, `qty`, `product`) VALUES
-(1, '2021-11-24 18:25:01', 1, 1, '2021-11-24 21:24:22', '2021-11-24 21:25:01', 'add', 4, 1);
+(1, '2021-11-25 19:39:13', 1, 1, '2021-11-24 21:24:22', '2021-11-25 22:54:55', 'add', 4, 1);
 
 -- --------------------------------------------------------
 
@@ -271,17 +274,17 @@ INSERT INTO `strapi_permission` (`id`, `action`, `subject`, `properties`, `condi
 (52, 'admin::roles.read', NULL, '{}', '[]', 1, '2021-11-24 20:33:11', '2021-11-24 20:33:11'),
 (53, 'admin::roles.update', NULL, '{}', '[]', 1, '2021-11-24 20:33:11', '2021-11-24 20:33:11'),
 (54, 'admin::roles.delete', NULL, '{}', '[]', 1, '2021-11-24 20:33:11', '2021-11-24 20:33:11'),
-(69, 'plugins::content-manager.explorer.create', 'application::product.product', '{\"fields\":[\"code\",\"name\",\"cat\",\"fab\",\"model\",\"ver\",\"year\",\"price\",\"critic\",\"stock\",\"stockevents\"]}', '[]', 1, '2021-11-24 20:44:01', '2021-11-24 20:44:01'),
 (70, 'plugins::content-manager.explorer.create', 'application::stockevent.stockevent', '{\"fields\":[\"type\",\"qty\",\"product\"]}', '[]', 1, '2021-11-24 20:44:01', '2021-11-24 20:44:01'),
-(71, 'plugins::content-manager.explorer.read', 'application::product.product', '{\"fields\":[\"code\",\"name\",\"cat\",\"fab\",\"model\",\"ver\",\"year\",\"price\",\"critic\",\"stock\",\"stockevents\"]}', '[]', 1, '2021-11-24 20:44:01', '2021-11-24 20:44:01'),
 (72, 'plugins::content-manager.explorer.read', 'application::stockevent.stockevent', '{\"fields\":[\"type\",\"qty\",\"product\"]}', '[]', 1, '2021-11-24 20:44:01', '2021-11-24 20:44:01'),
-(73, 'plugins::content-manager.explorer.update', 'application::product.product', '{\"fields\":[\"code\",\"name\",\"cat\",\"fab\",\"model\",\"ver\",\"year\",\"price\",\"critic\",\"stock\",\"stockevents\"]}', '[]', 1, '2021-11-24 20:44:01', '2021-11-24 20:44:01'),
 (74, 'plugins::content-manager.explorer.update', 'application::stockevent.stockevent', '{\"fields\":[\"type\",\"qty\",\"product\"]}', '[]', 1, '2021-11-24 20:44:01', '2021-11-24 20:44:01'),
-(80, 'plugins::content-manager.explorer.delete', 'application::product.product', '{}', '[]', 1, '2021-11-24 21:24:12', '2021-11-24 21:24:12'),
-(81, 'plugins::content-manager.explorer.delete', 'application::stockevent.stockevent', '{}', '[]', 1, '2021-11-24 21:24:12', '2021-11-24 21:24:12'),
-(82, 'plugins::content-manager.explorer.delete', 'plugins::users-permissions.user', '{}', '[]', 1, '2021-11-24 21:24:12', '2021-11-24 21:24:12'),
-(83, 'plugins::content-manager.explorer.publish', 'application::product.product', '{}', '[]', 1, '2021-11-24 21:24:12', '2021-11-24 21:24:12'),
-(84, 'plugins::content-manager.explorer.publish', 'application::stockevent.stockevent', '{}', '[]', 1, '2021-11-24 21:24:12', '2021-11-24 21:24:12');
+(113, 'plugins::content-manager.explorer.create', 'application::product.product', '{\"fields\":[\"code\",\"name\",\"cat\",\"fab\",\"model\",\"ver\",\"year\",\"price\",\"critic\",\"stock\",\"stockevents\",\"ubicacion\",\"origen\",\"nota\"]}', '[]', 1, '2021-11-25 22:47:42', '2021-11-25 22:47:42'),
+(114, 'plugins::content-manager.explorer.read', 'application::product.product', '{\"fields\":[\"code\",\"name\",\"cat\",\"fab\",\"model\",\"ver\",\"year\",\"price\",\"critic\",\"stock\",\"stockevents\",\"ubicacion\",\"origen\",\"nota\"]}', '[]', 1, '2021-11-25 22:47:42', '2021-11-25 22:47:42'),
+(115, 'plugins::content-manager.explorer.update', 'application::product.product', '{\"fields\":[\"code\",\"name\",\"cat\",\"fab\",\"model\",\"ver\",\"year\",\"price\",\"critic\",\"stock\",\"stockevents\",\"ubicacion\",\"origen\",\"nota\"]}', '[]', 1, '2021-11-25 22:47:42', '2021-11-25 22:47:42'),
+(116, 'plugins::content-manager.explorer.delete', 'application::product.product', '{}', '[]', 1, '2021-11-25 22:47:42', '2021-11-25 22:47:42'),
+(117, 'plugins::content-manager.explorer.delete', 'application::stockevent.stockevent', '{}', '[]', 1, '2021-11-25 22:47:42', '2021-11-25 22:47:42'),
+(118, 'plugins::content-manager.explorer.delete', 'plugins::users-permissions.user', '{}', '[]', 1, '2021-11-25 22:47:42', '2021-11-25 22:47:42'),
+(119, 'plugins::content-manager.explorer.publish', 'application::product.product', '{}', '[]', 1, '2021-11-25 22:47:42', '2021-11-25 22:47:42'),
+(120, 'plugins::content-manager.explorer.publish', 'application::stockevent.stockevent', '{}', '[]', 1, '2021-11-25 22:47:42', '2021-11-25 22:47:42');
 
 -- --------------------------------------------------------
 
@@ -579,27 +582,27 @@ INSERT INTO `users-permissions_permission` (`id`, `type`, `controller`, `action`
 (170, 'users-permissions', 'userspermissions', 'updateproviders', 0, '', 2, NULL, NULL),
 (171, 'users-permissions', 'userspermissions', 'updaterole', 0, '', 1, NULL, NULL),
 (172, 'users-permissions', 'userspermissions', 'updaterole', 0, '', 2, NULL, NULL),
-(173, 'application', 'product', 'count', 0, '', 1, NULL, NULL),
+(173, 'application', 'product', 'count', 1, '', 1, NULL, NULL),
 (174, 'application', 'product', 'count', 1, '', 2, NULL, NULL),
 (175, 'application', 'product', 'create', 0, '', 1, NULL, NULL),
 (176, 'application', 'product', 'create', 1, '', 2, NULL, NULL),
 (177, 'application', 'product', 'delete', 0, '', 1, NULL, NULL),
 (178, 'application', 'product', 'delete', 1, '', 2, NULL, NULL),
-(179, 'application', 'product', 'find', 0, '', 1, NULL, NULL),
+(179, 'application', 'product', 'find', 1, '', 1, NULL, NULL),
 (180, 'application', 'product', 'find', 1, '', 2, NULL, NULL),
-(181, 'application', 'product', 'findone', 0, '', 1, NULL, NULL),
+(181, 'application', 'product', 'findone', 1, '', 1, NULL, NULL),
 (182, 'application', 'product', 'findone', 1, '', 2, NULL, NULL),
 (183, 'application', 'product', 'update', 0, '', 1, NULL, NULL),
 (184, 'application', 'product', 'update', 1, '', 2, NULL, NULL),
-(185, 'application', 'stockevent', 'findone', 0, '', 1, NULL, NULL),
+(185, 'application', 'stockevent', 'findone', 1, '', 1, NULL, NULL),
 (186, 'application', 'stockevent', 'find', 1, '', 2, NULL, NULL),
-(187, 'application', 'stockevent', 'find', 0, '', 1, NULL, NULL),
+(187, 'application', 'stockevent', 'find', 1, '', 1, NULL, NULL),
 (188, 'application', 'stockevent', 'delete', 1, '', 2, NULL, NULL),
 (189, 'application', 'stockevent', 'delete', 0, '', 1, NULL, NULL),
 (190, 'application', 'stockevent', 'create', 1, '', 2, NULL, NULL),
 (191, 'application', 'stockevent', 'create', 0, '', 1, NULL, NULL),
 (192, 'application', 'stockevent', 'count', 1, '', 2, NULL, NULL),
-(193, 'application', 'stockevent', 'count', 0, '', 1, NULL, NULL),
+(193, 'application', 'stockevent', 'count', 1, '', 1, NULL, NULL),
 (194, 'application', 'stockevent', 'findone', 1, '', 2, NULL, NULL),
 (195, 'application', 'stockevent', 'update', 0, '', 1, NULL, NULL),
 (196, 'application', 'stockevent', 'update', 1, '', 2, NULL, NULL);
@@ -649,6 +652,13 @@ CREATE TABLE `users-permissions_user` (
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `users-permissions_user`
+--
+
+INSERT INTO `users-permissions_user` (`id`, `username`, `email`, `provider`, `password`, `resetPasswordToken`, `confirmationToken`, `confirmed`, `blocked`, `role`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
+(1, 'test', 'test@test.com', 'local', '$2a$10$QCvnaqtBGuaalfYUxNFql.alnxluaGXZBeDU2rLtWkgEV6IvG0x2y', NULL, NULL, 1, 0, 1, 1, 1, '2021-11-24 23:53:07', '2021-11-24 23:53:07');
 
 --
 -- Índices para tablas volcadas
@@ -783,7 +793,7 @@ ALTER TABLE `strapi_administrator`
 -- AUTO_INCREMENT de la tabla `strapi_permission`
 --
 ALTER TABLE `strapi_permission`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
 
 --
 -- AUTO_INCREMENT de la tabla `strapi_role`
@@ -831,7 +841,7 @@ ALTER TABLE `users-permissions_role`
 -- AUTO_INCREMENT de la tabla `users-permissions_user`
 --
 ALTER TABLE `users-permissions_user`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -131,7 +131,9 @@ function StockEventsTable(props){
                                         /*total  = {stockTotal}*/
                                         total  = {product.stock}   
                                         /*stockEvents = {relevantStockEvents}*/
-                                        stockEvents = {relevantStockEvents} 
+                                        ubicacion = {product.ubicacion} 
+                                        origen = {product.origen} 
+                                        nota = {product.nota} 
                                     />
                                     
                             {/*</div> */}
