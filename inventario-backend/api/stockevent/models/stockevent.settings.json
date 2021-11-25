@@ -23,8 +23,8 @@
       "type": "integer"
     },
     "product": {
-      "model": "product",
-      "via": "stockevents"
+      "via": "stockevents",
+      "model": "product"
     }
   }
 }
