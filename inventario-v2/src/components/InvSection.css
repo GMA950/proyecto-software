@@ -14,13 +14,15 @@
     object-fit: contain;
     min-height: 100vh;
     padding-top: 0%;
+    margin-top:80px;
     /*overflow: auto;*/
 }
 
 .mb-2{
     display: flex;
     flex-direction: row;
-    width: 90%;
+    width: 100%;
+    overflow:hidden;
 }
 
 .mbl {
@@ -28,6 +30,7 @@
     flex-direction: row;
     margin-left: 1%;
     margin-right: auto;
+    
 }
 
 .mbr {
@@ -37,8 +40,37 @@
     margin-left: auto;
 }
 
+.bto{
+    width:90%;
+}
+
 .bt3{
-    padding: 10px 10px 10px 10px;
+    padding: 0px 5px 0px 5px;
+}
+.bt4{
+    /*position: absolute;*/
+    /*margin-right: 1%;*/
+    float:right;
+    margin-right:4%;
+    margin-top:-30px;
+    margin-bottom:-20px;
+}
+
+.btcontent{
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px 0px 20px;
+    margin-top:-8px;
+    margin-bottom:-4px;
+    /*align-items: center;
+    justify-content: center;*/
+}
+.btext{
+    font-size: 16px;
+}
+
+.bti{
+    /*flex: 1;*/
 }
 
 .usr-cont{
@@ -51,19 +83,19 @@
 }
 
 .inv-til{
-    margin-top: -1%;
-    font-size: 75px;
+    font-size: 55px;
     text-align: center;
 }
 
 .row {
     display: flex; /* equal height of the children */
     width: 100%;
+    margin-top:10px;
   }
   
 .col {
     flex: 1; /* additionally, equal width */
-    padding: 0em;
+    /*padding: 0em;*/
     /*border: solid;*/
   }
 

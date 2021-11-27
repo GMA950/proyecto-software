@@ -119,6 +119,9 @@ function StockEventsTable(props){
                             {/*<div className = "StockEventTable__ProductContainer">*/}
                             {/*{product.id} */}
                                     < StockDetail 
+                                            product={product}
+                                            stockEvents = {relevantStockEvents}
+                                        /*
                                         id = {product.id} 
                                         code = {product.code}
                                         name = {product.name}
@@ -129,11 +132,11 @@ function StockEventsTable(props){
                                         year = {product.year}
                                         price = {product.price}
                                         /*total  = {stockTotal}*/
-                                        total  = {product.stock}   
+                                        /*total  = {product.stock}
                                         /*stockEvents = {relevantStockEvents}*/
-                                        ubicacion = {product.ubicacion} 
+                                        /*ubicacion = {product.ubicacion} 
                                         origen = {product.origen} 
-                                        nota = {product.nota} 
+                                        nota = {product.nota}*/
                                     />
                                     
                             {/*</div> */}

@@ -21,22 +21,34 @@ class StockDetail extends React.Component{
 
 
     render(){
-        const {id, code, name, cat, fab, model, ver, year, price, total, ubicacion, origen, nota, stockEvents} = this.props
+        /*const {id, code, name, cat, fab, model, ver, year, price, total, ubicacion, origen, nota, stockEvents} = this.props*/
+        const {product, stockEvents} = this.props
         const {show} = this.state
         return(
             <>
             <tr className="StockDetail" onClick={() => this.setState({show: !show})}>
                 {/*<h2>Product: {name} | Total: {total}</h2>*/}
-                <td>{id}</td>{/*id*/}
-                <td>{code}</td> {/*codigo*/}
-                <td>{name}</td> {/*nombre*/}
-                <td>{cat}</td> {/*categoria*/}
-                <td>{fab}</td> {/*fabricante*/}
-                <td>{model}</td> {/*modelo*/}
-                <td>{ver}</td> {/*version*/}
-                <td>{year}</td> {/*año*/}
-                <td>{price}</td> {/*precio*/}
-                <td>{total}</td>
+                <td>{product.id}</td>
+                <td>{product.code}</td>
+                <td>{product.name}</td>
+                <td>{product.cat}</td>
+                <td>{product.fab}</td>
+                <td>{product.model}</td>
+                <td>{product.ver}</td>
+                <td>{product.year}</td>
+                <td>{product.price}</td>
+                <td>{product.stock}</td>
+                {/*
+                <td>{id}</td>{/*id
+                <td>{code}</td> {/*codigo
+                <td>{name}</td> {/*nombre
+                <td>{cat}</td> {/*categoria
+                <td>{fab}</td> {/*fabricante
+                <td>{model}</td> {/*modelo
+                <td>{ver}</td> {/*version
+                <td>{year}</td> {/*año
+                <td>{price}</td> {/*precio
+                <td>{total}</td>*/}
             </tr>
             {show &&
                 <tr>
@@ -45,11 +57,11 @@ class StockDetail extends React.Component{
                             <div className = "container_card">
                                 <div className = "e1">
                                     <b>Nota:</b>
-                                    <div className = "et">{nota}</div>
+                                    <div className = "et">{product.nota}</div>{/*nota*/}
                                 </div>
                                 <div className = "e1">
-                                    <p><b>Ubicación:</b> {ubicacion}</p>
-                                    <p><b>Origen:</b> {origen}</p>
+                                    <p><b>Ubicación:</b> {product.ubicacion}</p>{/*ubicacion*/}
+                                    <p><b>Origen:</b> {product.origen}</p>{/*origen*/}
                                 </div>
                                 <div className = "e1">
                                 </div>
@@ -65,7 +77,7 @@ class StockDetail extends React.Component{
                                                 <Button variant="success" size="md">
                                                     <div className = "btinfo">
                                                         <div className="btext"><b>Agregar al Carro</b></div>
-                                                        <div className="bti"><i class="fas fa-shopping-cart fa-2x"/></div>
+                                                        <div className="bti"><i class="fas fa-cart-plus fa-2x"/></div>
                                                     </div>
                                                 </Button>
                                                 <br />
