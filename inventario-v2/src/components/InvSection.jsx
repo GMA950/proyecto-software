@@ -29,6 +29,7 @@ const fetchedStockEvents = [
 ]
 
 const searchData = {code: '',name: '',cat: '',fab: '',model: '',ver: '',year: '',price: '',stock: ''}
+const shopData = {code: '', name: '', price: 0, cant: 0}
 
 //fetch stock events
 
@@ -41,7 +42,8 @@ class InvSection extends React.Component{
     state = {
         fetchedProducts,
         fetchedStockEvents,
-        searchData
+        searchData,
+        shopData
     }
 
     handleChange = (value) => {
@@ -52,6 +54,13 @@ class InvSection extends React.Component{
         this.setState({searchData}) //funciona por algun motivo llama de nuevo el render creo this.setSate(searchData = value)
         //console.log(searchData)
      }
+
+    shopValues = (values) => {
+        const shopData = values
+        this.setState({shopData})
+        //localStorage.setItem('cart-items', JSON.stringify(shopData))
+        //console.log(shopData)
+    }
 
     async componentDidMount(){
 
@@ -77,8 +86,8 @@ class InvSection extends React.Component{
     
 
     render(){
-        console.log("App.render")
-        const {fetchedProducts, fetchedStockEvents, searchData} = this.state
+        //console.log("App.render")
+        const {fetchedProducts, fetchedStockEvents, searchData, shopData} = this.state
         let svalues = {} //no se actualiza porque?
         //console.log(searchData)
         //console.log(svalues)
@@ -89,13 +98,14 @@ class InvSection extends React.Component{
                     <div class = 'col'><div className = "inv-til">Inventario</div></div>
                     <div class = 'col'></div>
                 </div>
-                <div className="bto"><InvOptions/></div>
+                <div className="bto"><InvOptions shopInfo = {shopData}/></div>
                 <div class = "table-container">
-                    <Search handleChange={this.handleChange} svalues = {this.state.searchData}/>
+                    <Search handleChange={this.handleChange} /> {/*svalues = {this.state.searchData}*/}
                     <StockEventsTable
                         searchValues={searchData}
                         products={fetchedProducts} 
                         stockEvents = {fetchedStockEvents}
+                        shopValues = {this.shopValues}
                     />
                 </div>
             </div>

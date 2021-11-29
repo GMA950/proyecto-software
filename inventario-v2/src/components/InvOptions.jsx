@@ -8,11 +8,18 @@ import '../App.css';
 import './InvSection.css';
 
 
-function InvOptions() {
+function InvOptions(props) {
+
+    const {shopInfo} = props
+
     return (
         <>    
         <div className="bt4">
             <Link to="/cart">
+            {/*<Link 
+                to={{pathname:"/cart",
+                    state: shopInfo
+                }}>*/}
                 <Button variant="primary" size="lg"> 
                     <div className = "btcontent">
                         <div className="btext"><b>Ver Carrito</b></div>
@@ -29,7 +36,7 @@ function InvOptions() {
                 <Button variant="warning" size="md">Bajos en Stock</Button>
             </div>
             <div className="bt3">
-            <Button variant="success" size="md">Exportar</Button>
+                <Button variant="success" size="md">Exportar</Button>
             </div>
         </div>
         </>

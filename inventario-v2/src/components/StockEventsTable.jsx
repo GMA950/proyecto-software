@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 import './StockEventsTable.css';
 import Table from 'react-bootstrap/Table';
 import StockDetail from './StockDetail';
@@ -6,7 +6,75 @@ import StockDetail from './StockDetail';
 
 function StockEventsTable(props){
    
-    const {searchValues, products, stockEvents} = props
+    const {searchValues, products, stockEvents, shopValues} = props    
+
+    const [initialShop, setShopValues] = useState([
+        {code: '', name: '', price:0, cant:0, id:0},
+    ])
+
+    let localCart = localStorage.getItem('cart-items');
+
+    function findArrayElementByCode(array, code) {
+        return array.find((element) => {
+          return element.code == code;
+        })
+      }
+    
+    function getIndex(code) {
+    return initialShop.findIndex(obj => obj.code === code);
+    }
+
+    const addMoreItem = (a,b,c,d, i) => {
+        if (!findArrayElementByCode(initialShop, a)){
+            console.log("nuevo")
+            if(initialShop[0].code == ''){
+                console.log("vacio eliminado")
+                let newShop = initialShop
+                newShop[0] = {code: a, name: b, price: c, cant: parseInt(d), id: i}
+                setShopValues(newShop)
+                localStorage.setItem('cart-items', JSON.stringify(newShop))//importante
+            }else{
+                //console.log("nuevo item")
+                setShopValues(prevItems => [...prevItems, {
+                    code: a,//prevItems.length,
+                    name: b,//getRandomNumber(),
+                    price: c,
+                    cant: d,
+                    id: i
+                }]);
+            }
+        }else{
+            //console.log("repetido")
+            const i = getIndex(a)
+            let newShop = initialShop
+            newShop[i].cant = parseInt(newShop[i].cant) + parseInt(d)
+            setShopValues(newShop)
+            localStorage.setItem('cart-items', JSON.stringify(newShop)) //importante
+        }
+    }
+    
+    useEffect(() => {
+        localCart = JSON.parse(localCart);
+        //console.log(localCart)
+        if(localCart){
+            //console.log("recuperado en inv")
+            if(localCart.length > 0 && localCart[0].name!==''){
+                //console.log(localCart)
+                setShopValues(localCart)
+            }else{
+                setShopValues(initialShop)
+            }
+        }else{
+            setShopValues(initialShop)
+        }
+    },[]);
+
+    useEffect(() => {
+        shopValues(initialShop)
+        localStorage.setItem('cart-items', JSON.stringify(initialShop))
+        //console.log("aqui inv")
+        //console.log(initialShop)
+    },[initialShop]);
    
     return (
         
@@ -41,7 +109,7 @@ function StockEventsTable(props){
                             product.price=''
                         }
                         if(searchValues.code=="" && searchValues.name=="" && searchValues.cat=="" && searchValues.fab=="" && searchValues.model=="" && searchValues.ver=="" && searchValues.year=="" && searchValues.stock=="" && searchValues.price==""){
-                            console.log("limpio")
+                            //console.log("limpio")
                             return product
                         }else if(product.name.toLowerCase().includes(searchValues.name.toLowerCase()) 
                                 && product.cat.toLowerCase().includes(searchValues.cat.toLowerCase())
@@ -119,24 +187,22 @@ function StockEventsTable(props){
                             {/*<div className = "StockEventTable__ProductContainer">*/}
                             {/*{product.id} */}
                                     < StockDetail 
-                                            product={product}
+                                            id = {product.id} 
+                                            code = {product.code}
+                                            name = {product.name}
+                                            cat = {product.cat}
+                                            fab = {product.fab}
+                                            model = {product.model}
+                                            ver = {product.ver}
+                                            year = {product.year}
+                                            price = {product.price}
+                                            /*total  = {stockTotal}*/
+                                            stock  = {product.stock}
+                                            ubicacion = {product.ubicacion} 
+                                            origen = {product.origen} 
+                                            nota = {product.nota}
                                             stockEvents = {relevantStockEvents}
-                                        /*
-                                        id = {product.id} 
-                                        code = {product.code}
-                                        name = {product.name}
-                                        cat = {product.cat}
-                                        fab = {product.fab}
-                                        model = {product.model}
-                                        ver = {product.ver}
-                                        year = {product.year}
-                                        price = {product.price}
-                                        /*total  = {stockTotal}*/
-                                        /*total  = {product.stock}
-                                        /*stockEvents = {relevantStockEvents}*/
-                                        /*ubicacion = {product.ubicacion} 
-                                        origen = {product.origen} 
-                                        nota = {product.nota}*/
+                                            addItem = {addMoreItem}
                                     />
                                     
                             {/*</div> */}

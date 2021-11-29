@@ -11,6 +11,17 @@
     width: 100%;
 }
 
+#my-input2[type="number"]{
+    -moz-appearance: textfield;
+    text-align: left;
+    font-size: 16px;
+    border: 1px solid black;
+    border-radius: 2px;
+    background-color: #ffffff;
+    color: #202030;
+    width:45px;
+}
+
 .container_card{
     display: flex;
     flex-direction: row;
