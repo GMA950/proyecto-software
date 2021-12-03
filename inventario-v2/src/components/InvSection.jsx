@@ -66,20 +66,28 @@ class InvSection extends React.Component{
 
         const productsRes = await axios({
             method: 'GET', 
-            url: 'http://localhost:1337/products'
+            //url: 'http://localhost:1337/products'
+            url: 'http://localhost:8000/products/',
+            /*auth: {
+                username: 'admin@admin.com',
+                password: '2021Diciembre'
+              }*/
         })
 
-        const stockEventsRes = await axios({
+        /*const stockEventsRes = await axios({
             method: 'GET', 
             url: 'http://localhost:1337/stockevents'
-        })
+        })*/
         
         //console.log("App.componentDidMount stockEventsRes", stockEventsRes)
 
         const fetchedProducts = productsRes.data
-        const fetchedStockEvents = stockEventsRes.data
+        //console.log(fetchedProducts)
+        /*const fetchedStockEvents = stockEventsRes.data*/
 
-        this.setState({fetchedProducts, fetchedStockEvents}) //searchData
+        /*this.setState({fetchedProducts, fetchedStockEvents}) //searchData*/
+
+        this.setState({fetchedProducts})
     }
 
     
@@ -87,7 +95,8 @@ class InvSection extends React.Component{
 
     render(){
         //console.log("App.render")
-        const {fetchedProducts, fetchedStockEvents, searchData, shopData} = this.state
+        //const {fetchedProducts, fetchedStockEvents, searchData, shopData} = this.state
+        const {fetchedProducts, searchData, shopData} = this.state
         let svalues = {} //no se actualiza porque?
         //console.log(searchData)
         //console.log(svalues)

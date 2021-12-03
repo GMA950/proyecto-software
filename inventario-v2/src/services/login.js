@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const ENDPOINT = 'http://localhost:1337'
+const ENDPOINT = 'http://localhost:8000'
 
 export default function login (username, pass){
     console.log(username);

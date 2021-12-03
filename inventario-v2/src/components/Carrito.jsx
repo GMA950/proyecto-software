@@ -61,7 +61,7 @@ function Carrito(props){
         })
         if(posible){
             e.map((a) => {
-                console.log('http://localhost:1337/products/'+a.id)
+                //console.log('http://localhost:1337/products/'+a.id)
                 //console.log(c)
                 let retData = c.find(element => element.code == a.code)
                 //console.log(retData)
