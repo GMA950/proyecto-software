@@ -1,11 +1,15 @@
-import { useCallback, useContext, useState} from "react"
+import { useCallback, useContext, useEffect, useState} from "react"
 import Context from "context/UserContext"
 import loginService from 'services/login'
+
 
 export default function useUser(){
     const {jwt, setJWT} = useContext(Context)
     const [state, setState] = useState({loading : false, error:false, name:''})
    
+    
+    useEffect(() => {
+      },[jwt, state]);
 
     const login = useCallback(({username,password}) =>{
         setState({loading:true, error:false})

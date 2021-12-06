@@ -24,7 +24,7 @@ export default function Login(){
             console.log(response.data);
         })} */
   
-        alert(`${username}, ${password}`)
+        //alert(`${username}, ${password}`)
         login({username,password})
         //pushLocation.push('/inv')
     }

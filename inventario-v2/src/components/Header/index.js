@@ -59,7 +59,7 @@ export default function Header(){
                                     </Link>
                                 </li>
                                 <li className='nav-menu-item'>
-                                    <Link to='/Products' className='nav-links' >
+                                    <Link to='/cart' className='nav-links' >
                                         CONFIGURACIÓN
                                     </Link>
                                 </li>

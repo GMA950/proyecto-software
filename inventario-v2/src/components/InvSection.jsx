@@ -12,9 +12,9 @@ import Search from './Search';
 // Products
 
 const fetchedProducts = [
-    {id: 1, code: '0', name: "Barra Torsión IZQ", cat: "Suspensión", fab: "Chevrolet", model: "Dmax", ver:"Todas", year: "2006-2014", price: 40000, critic: 10},
-    {id: 2, code: '0', name: "Optico IZQ", cat: "Opticos", fab: "Mazda", model: "626", ver:"FS DOHC 16 VALV 4X2", year: "2000-2004", price: 70000, critic: 10},
-    {id: 3, code: '0', name: "Bateria Auto 60AH 550CCA",cat: "Electricos", fab: "Hankook", model: "", ver:"", year: "", price: 64990, critic: 10}
+    {id: 1, code: '0', name: "Barra Torsión IZQ", cat: "Suspensión", fab: "Chevrolet", model: "Dmax", ver:"Todas", year: "2006-2014", ubicacion:"bodega", origen:"USA", nota:"",price: 40000, critic: 10, stock:20},
+    {id: 2, code: '0', name: "Optico IZQ", cat: "Opticos", fab: "Mazda", model: "626", ver:"FS DOHC 16 VALV 4X2", year: "2000-2004", ubicacion:"mostrador", origen:"Japon", nota:"", price: 70000, critic: 10, stock:20},
+    {id: 3, code: '0', name: "Bateria Auto 60AH 550CCA",cat: "Electricos", fab: "Hankook", model: "", ver:"", year: "", price: 64990, ubicacion:"vitrina", origen:"China", nota:"", critic: 10, stock:20}
 ]
 
 // stock events
@@ -29,6 +29,7 @@ const fetchedStockEvents = [
 ]
 
 const searchData = {code: '',name: '',cat: '',fab: '',model: '',ver: '',year: '',price: '',stock: ''}
+const shopData = {code: '', name: '', price: 0, cant: 0}
 
 //fetch stock events
 
@@ -41,7 +42,8 @@ class InvSection extends React.Component{
     state = {
         fetchedProducts,
         fetchedStockEvents,
-        searchData
+        searchData,
+        shopData
     }
 
     handleChange = (value) => {
@@ -53,32 +55,48 @@ class InvSection extends React.Component{
         //console.log(searchData)
      }
 
+    shopValues = (values) => {
+        const shopData = values
+        this.setState({shopData})
+        //localStorage.setItem('cart-items', JSON.stringify(shopData))
+        //console.log(shopData)
+    }
+
     async componentDidMount(){
 
         const productsRes = await axios({
             method: 'GET', 
-            url: 'http://localhost:1337/products'
+            //url: 'http://localhost:1337/products'
+            url: 'http://localhost:8000/products/',
+            /*auth: {
+                username: 'admin@admin.com',
+                password: '2021Diciembre'
+              }*/
         })
 
-        const stockEventsRes = await axios({
+        /*const stockEventsRes = await axios({
             method: 'GET', 
             url: 'http://localhost:1337/stockevents'
-        })
+        })*/
         
         //console.log("App.componentDidMount stockEventsRes", stockEventsRes)
 
         const fetchedProducts = productsRes.data
-        const fetchedStockEvents = stockEventsRes.data
+        //console.log(fetchedProducts)
+        /*const fetchedStockEvents = stockEventsRes.data*/
 
-        this.setState({fetchedProducts, fetchedStockEvents}) //searchData
+        /*this.setState({fetchedProducts, fetchedStockEvents}) //searchData*/
+
+        this.setState({fetchedProducts})
     }
 
     
     
 
     render(){
-        console.log("App.render")
-        const {fetchedProducts, fetchedStockEvents, searchData} = this.state
+        //console.log("App.render")
+        //const {fetchedProducts, fetchedStockEvents, searchData, shopData} = this.state
+        const {fetchedProducts, searchData, shopData} = this.state
         let svalues = {} //no se actualiza porque?
         //console.log(searchData)
         //console.log(svalues)
@@ -89,13 +107,14 @@ class InvSection extends React.Component{
                     <div class = 'col'><div className = "inv-til">Inventario</div></div>
                     <div class = 'col'></div>
                 </div>
-                <div className="mb-2"><InvOptions/></div>
+                <div className="bto"><InvOptions shopInfo = {shopData}/></div>
                 <div class = "table-container">
-                    <Search handleChange={this.handleChange} svalues = {this.state.searchData}/>
+                    <Search handleChange={this.handleChange} /> {/*svalues = {this.state.searchData}*/}
                     <StockEventsTable
                         searchValues={searchData}
                         products={fetchedProducts} 
                         stockEvents = {fetchedStockEvents}
+                        shopValues = {this.shopValues}
                     />
                 </div>
             </div>
