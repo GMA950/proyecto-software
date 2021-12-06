@@ -35,4 +35,4 @@ class Product(models.Model):
 
     def __str__(self):
         ''' Retornar String '''
-        return self. id, self.name
+        return  self.name

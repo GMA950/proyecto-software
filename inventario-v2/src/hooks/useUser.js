@@ -7,7 +7,7 @@ export default function useUser(){
     const {jwt, setJWT} = useContext(Context)
     const [state, setState] = useState({loading : false, error:false, name:''})
    
-
+    
     useEffect(() => {
       },[jwt, state]);
 

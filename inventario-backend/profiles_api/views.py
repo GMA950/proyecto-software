@@ -3,27 +3,31 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+from profiles_api.serializers import UserSerializer
 
-from profiles_api import serializers
+from rest_framework.permissions import IsAuthenticated
+from profiles_api.models import UserProfile
 
-
-class HelloApiView(APIView):
+class userAPI(APIView):
     ''' API VIEW TEST'''
 
-    serializer_class = serializers.HelloSerializer
-
+    #serializer_class = serializers.HelloSerializer
+    # Protejemos el punto final
+    permission_classes = (IsAuthenticated,)
     def get(self, request, format=None):
-        '''retorna lista de caracteristicas del api view'''
-        an_apiview = [
-            'usamos metodos http  como funciones (get, post, put, patch, delete)',
-            'es similar a una vista tradicional de django',
-            'nos da el mayor control sobre la logica de nuestra aplicacion',
-            'esta mapeado manualmente a los URLs',
-        ]
 
-        return Response({'message': 'Hello', 'an_apiview': an_apiview})
+        
+        #content = {'message': 'Hello, World!'}
 
-    def post(self, request):
+        users = UserProfile.objects.all()#settings.AUTH_USER_MODEL.objects.all()
+        serializer = UserSerializer(users, many=True)
+        
+        
+        return Response(serializer.data)
+        #return Response({'message': 'Hello', 'an_apiview': an_apiview})
+        #return Response(content)
+
+    def POST(self, request):
         '''crea un mensaje con nuestro nombre'''
         serializer = self.serializer_class(data=request.data)
 

@@ -12,6 +12,7 @@ import Login from './pages/login';
 import Footer from './components/Footer';
 import Header from 'components/Header';
 import {UserContextProvider} from 'context/UserContext'
+import PrivateRoute from 'components/PrivateRoute';
 function App() {
   
   return (
@@ -19,12 +20,19 @@ function App() {
       <Router>
         <Header/>
           <Switch>
-            <Route path='/services' exact component = {Services}/>
-            <Route path='/cart' exact component = {Cart}/>
-            <Route path='/inv' exact component = {InvSection}/>
             <Route path='/login' exact component = {Login}/>
             <Route path='/' exact component = {Login}/>
-              
+            <PrivateRoute path='/inv'>
+              <Route path='/inv' exact component = {InvSection}/>
+            </PrivateRoute>
+
+            <PrivateRoute path='/cart'>
+              <Route path='/cart' exact component = {Cart}/>
+            </PrivateRoute>
+
+            <PrivateRoute path = '/services'>
+              <Route path='/services' exact component = {Services}/>
+            </PrivateRoute>
             
           </Switch>
         <Footer></Footer>

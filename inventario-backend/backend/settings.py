@@ -38,9 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'rest_framework',
-    'rest_framework.authtoken',
 
+    
+    # Agregamos la aplicacion rest_framework
+    'rest_framework',
+    # Agregamos para implementar la autentificacion por token
+    'rest_framework.authtoken',
+    
     'corsheaders',
 
 
@@ -93,9 +97,16 @@ DATABASES = {
 }
 
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',  # <-- And here
+    ],
+
+    #'DEFAULT_PERMISSION_CLASSES': [
+    #    'rest_framework.authentication.TokenAuthentication', # para autentificacion
         #'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
+    #]
+    
+
 }
 
 
