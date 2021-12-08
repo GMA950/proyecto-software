@@ -38,7 +38,7 @@ export default function Header(){
                                 Valrepuestos<i className="fab fa-typo3"/>
                             </div>
                             <div>
-                                <i className='mensaje-bienvenido'> Hello, {userName}! </i>
+                                {/*<i className='mensaje-bienvenido'> Hello, {userName}! </i>*/}
                             </div>
        
                             <button className= 'nav-menu-icon' onClick = {toggleClassName}>

@@ -1,20 +1,14 @@
-.shopContainer {
-    /*background: url('../images/inventory-background.jpg') center center/cover no-repeat;*/
-    /*filter: grayscale(90%);*/
-    /*opacity: 0.3;*/
-    /*height: 100vh;/*100vh;*/
+.inputContainer {
     position: relative;
     height: auto;
     width: 100%;
-    display: flex;/*block flex;*/
+    display: flex;
     flex-direction: column;
-    /*justify-content: center;*/
     align-items: center;
     box-shadow: inset 0 0 0 1000px rgba(68, 116, 156, 0.2);
     object-fit: contain;
     min-height: 80vh;
     margin-top:80px;
-    /*overflow: auto;*/
 }
 
 .shop-til{
@@ -25,7 +19,7 @@
 .row-s {
     display: flex; /* equal height of the children */
     width: 100%;
-    margin-top:10px;
+    margin-top:25px;
   }
   
 .col-s {
@@ -34,48 +28,55 @@
     /*border: solid;*/
   }
 
-.space-shop{
+.space-input{
     margin-top:30px;
     background-color: #fff;
-    width:90%;
+    width:80%;
     display: flex;
-    flex-direction: row;
-    align-items: stretch;
+    flex-direction: column;
+    align-items: center;
+    /*align-items: stretch;*/
     padding: 20px;
     border: 1px solid;
     border-radius: 5px;
+    margin-bottom: 40px;
 }
 
-.SelectedCont{
-    width: 60%;
+.formCont{
+    width: 100%;
+    /*display: grid;*/
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /*align-items: center;*/
     /*justify-content: center;*/
     padding: 1%;
     border-radius: 5px;
-    margin-bottom: 2%;
 }
 
-.right-space{
-    width:40%;
+.ib-4{
+    margin-top:30px;
+    float: right;
+    margin-right: 2%;
+}
+
+.threeButtons{
+    margin-top:30px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top:10px;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
 }
 
-th{
-    text-align: center;
+#espaciado{
+    margin-left:7px;
+    margin-right: 7px;
 }
 
-td{
-    vertical-align: middle;
+#pos{
+    position: inherit;
 }
-
-#nombre{
-    width: 35%;
-}
+/*===================*/
 
 #titulos{
     border-bottom:solid black 2px;
@@ -89,10 +90,6 @@ td{
 
 #cantidad{
     width: 50px;
-}
-
-#precio{
-    
 }
 
 input { 
@@ -121,36 +118,10 @@ input {
     padding-top:25px;
     font-size: 18px;
 }
-.item-1{
-    padding-left:25px;
-}
-.item-2{
-    padding-left:30px;
-}
-.item-3{
-    padding-left:25px;
-}
-.item-4{
-    padding-left:30px;
-}
-.item-5{
-    padding-left:25px;
-}
-.item-6{
-    padding-left:30px;
-}
-.item-8{
-    text-align: center;
-    grid-column: 1 / 3;
-}
 
 .enserionecesitoesto{
     display: flex;
     flex-direction: row;
-}
-.porcentaje{
-    font-size: 22px;
-    margin-left: 5px;
 }
 
 .usr-cont{
@@ -162,65 +133,13 @@ input {
     margin-top: 4%;
 }
 
-.twoButtons{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    padding: 20px;
-}
+
 
 #custom{
     border-radius: 0px;
 }
 
 /*====================================================*/
-
-#body{
-    background-color: #3264fe;
-}
-/*.container{
-    position: absolute;
-    transform: translate(-50%,-50%);
-    top: 50%;
-    left: 50%;
-    display: flex;
-    background-color: #ffffff;
-    border-radius: 45px;
-    box-shadow: 0 20px 30px rgba(0,0,0,0.15);
-}*/
-#my-input[type="number"]{
-    -moz-appearance: textfield;
-    text-align: center;
-    font-size: 16px;
-    border: none;
-    background-color: #ffffff;
-    color: #202030;
-    width:40px;
-}
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button{
-    -webkit-appearance: none;
-    margin: 0;
-}
-#decrement{
-    color: #3264fe;
-    background-color: #ffffff;
-    border: none;
-    font-size: 25px;
-    cursor: pointer;
-    padding: 5px 0px 5px 15px;
-    border-radius: 45px 0 0 45px;
-}
-#increment{
-    color: #3264fe;
-    background-color: #ffffff;
-    border: none;
-    font-size: 25px;
-    cursor: pointer;
-    padding: 5px 15px 5px 0px;
-    border-radius: 0 45px 45px 0;
-}
 
 /*====================================================*/
 

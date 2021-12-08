@@ -7,6 +7,7 @@ import './App.css';
 import Services from './components/pages/Services';
 import Cart from './components/pages/Cart';
 import InvSection from './components/pages/Inv';
+import Ingreso from './components/pages/Input';
 
 import Login from './pages/login';
 import Footer from './components/Footer';
@@ -32,6 +33,10 @@ function App() {
 
             <PrivateRoute path = '/services'>
               <Route path='/services' exact component = {Services}/>
+            </PrivateRoute>
+
+            <PrivateRoute path = '/ingreso'>
+              <Route path='/ingreso' exact component = {Ingreso}/>
             </PrivateRoute>
             
           </Switch>

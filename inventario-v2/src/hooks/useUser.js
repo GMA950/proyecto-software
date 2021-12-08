@@ -21,11 +21,14 @@ export default function useUser(){
                 setState({loading:false, error:false, name:username})
                 console.log('jwt desde useUser',jwt)
                 setJWT(jwt)
-                
+                //localStorage.setItem('userName', username)
+                window.sessionStorage.setItem('userName', username)
             })
             .catch(err =>{
                 window.sessionStorage.removeItem('jwt')
                 setState({loading:false, error:true})
+                //localStorage.removeItem('userName')
+                window.sessionStorage.removeItem('userName')
                 console.log('error en el servicio de login!!!');
                 console.error(err)
             })
@@ -35,6 +38,7 @@ export default function useUser(){
         window.sessionStorage.removeItem('jwt')
         console.log('jwt antes de cerrar sesion: ', jwt );
         setJWT(null)
+        localStorage.removeItem('userName')
         console.log('jwt despues de cerrar sesion: ', jwt );
     }, [setJWT,jwt])
 

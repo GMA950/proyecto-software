@@ -7,6 +7,7 @@ from profiles_api.serializers import UserSerializer
 
 from rest_framework.permissions import IsAuthenticated
 from profiles_api.models import UserProfile
+from django.conf import settings
 
 class userAPI(APIView):
     ''' API VIEW TEST'''
@@ -14,10 +15,17 @@ class userAPI(APIView):
     #serializer_class = serializers.HelloSerializer
     # Protejemos el punto final
     permission_classes = (IsAuthenticated,)
-    def get(self, request, format=None):
+    def get(self, request, format=None, username=None):
 
         
         #content = {'message': 'Hello, World!'}
+
+        if username:
+            user = UserProfile.objects.get(username=username)#UserProfile.objects.get(username=username)
+            serializer = UserSerializer(user)
+            print(serializer.data['id'])
+            return Response({"status": "success", "id": serializer.data['id']}, status=status.HTTP_200_OK)
+
 
         users = UserProfile.objects.all()#settings.AUTH_USER_MODEL.objects.all()
         serializer = UserSerializer(users, many=True)

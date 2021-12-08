@@ -32,7 +32,8 @@ class Product(models.Model):
     ubicacion = models.CharField(blank=True, null=True, max_length=50)
     origen = models.CharField(blank=True, null=True, max_length=50)
     nota = models.CharField(blank=True, null=True, max_length=300)
-
+    
     def __str__(self):
         ''' Retornar String '''
-        return  self.name
+        retorno = "codigo: " + self.code + ", nombre: " + self.name + ", precio: " + str(self.price) + ", stock: " + str(self.stock)
+        return  retorno#self.name

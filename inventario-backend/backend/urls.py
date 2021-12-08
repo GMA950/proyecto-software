@@ -24,8 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('profiles_api.urls')),
     #path('',include(router.urls)),
-    path('products/', include('products.urls')),
-    path('token-auth/', obtain_jwt_token),
-    path('hello/', views.userAPI.as_view(), name='hello'),
-    path('api-token-auth/', obtain_auth_token, name = 'api_token_auth')
+    #path('products/', include('products.urls')),
+    path('api/', include('products.urls')),
 ]

@@ -31,6 +31,8 @@ const fetchedStockEvents = [
 const searchData = {code: '',name: '',cat: '',fab: '',model: '',ver: '',year: '',price: '',stock: ''}
 const shopData = {code: '', name: '', price: 0, cant: 0}
 
+const userName = 'test'
+
 //fetch stock events
 
 
@@ -43,7 +45,8 @@ class InvSection extends React.Component{
         fetchedProducts,
         fetchedStockEvents,
         searchData,
-        shopData
+        shopData,
+        userName
     }
 
     handleChange = (value) => {
@@ -67,7 +70,7 @@ class InvSection extends React.Component{
         const productsRes = await axios({
             method: 'GET', 
             //url: 'http://localhost:1337/products'
-            url: 'http://localhost:8000/products/',
+            url: 'http://localhost:8000/api/products/',
             /*auth: {
                 username: 'admin@admin.com',
                 password: '2021Diciembre'
@@ -80,14 +83,15 @@ class InvSection extends React.Component{
         })*/
         
         //console.log("App.componentDidMount stockEventsRes", stockEventsRes)
-
-        const fetchedProducts = productsRes.data
+        //console.log(productsRes)
+        const fetchedProducts = productsRes.data.data
+        const userName = window.sessionStorage.getItem('userName')//localStorage.getItem('userName')
         //console.log(fetchedProducts)
         /*const fetchedStockEvents = stockEventsRes.data*/
 
         /*this.setState({fetchedProducts, fetchedStockEvents}) //searchData*/
 
-        this.setState({fetchedProducts})
+        this.setState({fetchedProducts, userName})
     }
 
     
@@ -96,14 +100,14 @@ class InvSection extends React.Component{
     render(){
         //console.log("App.render")
         //const {fetchedProducts, fetchedStockEvents, searchData, shopData} = this.state
-        const {fetchedProducts, searchData, shopData} = this.state
+        const {fetchedProducts, searchData, shopData, userName} = this.state
         let svalues = {} //no se actualiza porque?
         //console.log(searchData)
         //console.log(svalues)
         return (
             <div className ='inv-container'>
                 <div class = 'row'>
-                    <div class = 'col'><div className = "usr-cont">Bienvenido: USUARIO NULL</div></div>
+                    <div class = 'col'><div className = "usr-cont">Bienvenido: {userName}</div></div>
                     <div class = 'col'><div className = "inv-til">Inventario</div></div>
                     <div class = 'col'></div>
                 </div>

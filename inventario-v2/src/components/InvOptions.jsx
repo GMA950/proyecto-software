@@ -30,7 +30,9 @@ function InvOptions(props) {
         </div>
         <div className="mb-2">
             <div className="bt3">
-                <Button variant="secondary" size="md">Ingresar Productos</Button>
+                <Link to="/ingreso">
+                    <Button variant="secondary" size="md">Ingresar Productos</Button>
+                </Link>
             </div>
             <div className="bt3">
                 <Button variant="warning" size="md">Bajos en Stock</Button>

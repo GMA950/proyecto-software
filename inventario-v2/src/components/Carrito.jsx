@@ -15,7 +15,7 @@ function Carrito(props){
         {code: "1234", name:"hola", price:99,cant:2},
         {code: "1333", name:"chao", price:69,cant:1}
     ]*/
-
+    const [username, setName] = useState(window.sessionStorage.getItem('userName'))
     const [testProducts, setValues] = useState([])
     let localCart = localStorage.getItem('cart-items');
     //let localCart = localStorage.getItem('cart');
@@ -61,11 +61,11 @@ function Carrito(props){
         })
         if(posible){
             e.map((a) => {
-                console.log('http://localhost:1337/products/'+a.id)
+                //console.log('http://localhost:800/api/products/'+a.id)
                 //console.log(c)
                 let retData = c.find(element => element.code == a.code)
                 //console.log(retData)
-                axios.put('http://localhost:1337/products/'+a.id,{
+                axios.patch('http://localhost:8000/api/products/'+a.id,{
                     stock: retData.stock - a.cant
                 }).then(response =>{
                     console.log(response)
@@ -84,12 +84,15 @@ function Carrito(props){
         //console.log(localCart)
         const undProducts = []
         testProducts.map(async (e) =>{
-            const response = await axios.get('http://localhost:1337/products',{
+            /*const response = await axios.get('http://localhost:8000/api/products',{
                 params: {
                     code: e.code
                 }
             })
-            undProducts.push(response.data[0])
+            undProducts.push(response.data[0])*/
+            const response = await axios.get('http://localhost:8000/api/products/code/'+e.code,{})
+            //console.log(response.data.data)
+            undProducts.push(response.data.data)
             console.log("item obtenido")
         })
         //console.log(undProducts)
@@ -157,7 +160,7 @@ function Carrito(props){
     return (
         <div className="shopContainer">
             <div class = 'row-s'>
-                <div class = 'col-s'><div className = "usr-cont">Vendedor: NULL</div></div>
+                <div class = 'col-s'><div className = "usr-cont">Vendedor: {username}</div></div>
                 <div class = 'col-s'><div className = "shop-til">Carrito</div></div>
                 <div class = 'col-s'></div>
             </div>
