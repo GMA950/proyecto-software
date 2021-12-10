@@ -1,4 +1,7 @@
-"""backend URL Configuration
+"""
+ urls.py ES EL ARCHIVO DE ENTRADA PARA TODOS LOS URLS DEL PROYECTO
+
+backend URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -16,16 +19,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework_jwt.views import obtain_jwt_token
-from profiles_api import views
-from rest_framework.authtoken.views import obtain_auth_token
+from profiles_api import views 
 #router = routers.DefaultRouter()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('profiles_api.urls')),
+    path('users/', include('profiles_api.urls')), # incluimos el urls.py de profiles_api 
     #path('',include(router.urls)),
     path('products/', include('products.urls')),
-    path('token-auth/', obtain_jwt_token),
-    path('hello/', views.userAPI.as_view(), name='hello'),
-    path('api-token-auth/', obtain_auth_token, name = 'api_token_auth')
+    #path('token-auth/', obtain_jwt_token),
+    #path('hello/', views.userAPI.as_view(), name='hello'),
+    #path('api-token-auth/', obtain_auth_token, name = 'api_token_auth')
 ]

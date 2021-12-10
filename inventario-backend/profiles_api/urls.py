@@ -3,7 +3,8 @@ from rest_framework.authtoken.views import obtain_auth_token
 from profiles_api import views
 
 urlpatterns = [
-    path('hello/', views.userAPI.as_view(), name = 'hello'),
-    path('users/', views.userAPI.as_view()),
-    path('api-token-auth/', obtain_auth_token, name = 'api_token_autha'),
+    path('hello/', views.userAPI.as_view(), name='hello'),
+    path('api-token-auth/', obtain_auth_token, name = 'api_token_auth')
+    #path('users/', views.userAPI.as_view()),
+    
 ]

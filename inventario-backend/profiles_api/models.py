@@ -12,7 +12,8 @@ class UserProfileManager(BaseUserManager):
         '''crear Nuevo usuario'''
         if not email:
             raise ValueError('Usuario debe tener un Email')
-        email = self.normalize_email(email)
+        
+        email = self.normalize_email(email) # convertir mayusculas a minusculas
         user = self.model(email=email,username=username ,name=name)
 
         user.set_password(password)
@@ -48,10 +49,9 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
         ''' Obtener Nombre Completo del usuario'''
         return self.name
 
-    def get_short_name(self):
-        ''' Obtener Nombre Corto del usuario'''
-        return self.name
+
 
     def __str__(self):
         ''' Retornar String representando nuestor usuario '''
-        return self.email
+        #return self.email
+        return self.username

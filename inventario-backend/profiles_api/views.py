@@ -3,31 +3,31 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from profiles_api.serializers import UserSerializer
-
+#from profiles_api.serializers import UserSerializer
+from profiles_api import serializers
 from rest_framework.permissions import IsAuthenticated
 from profiles_api.models import UserProfile
 
 class userAPI(APIView):
     ''' API VIEW TEST'''
 
-    #serializer_class = serializers.HelloSerializer
+    serializer_class = serializers.UserSerializer
     # Protejemos el punto final
     permission_classes = (IsAuthenticated,)
     def get(self, request, format=None):
 
         
-        #content = {'message': 'Hello, World!'}
-
-        users = UserProfile.objects.all()#settings.AUTH_USER_MODEL.objects.all()
-        serializer = UserSerializer(users, many=True)
+        content = {'message': 'Hello, World!'}
+        #user = request.users.username
+        #users = UserProfile.objects.all()#settings.AUTH_USER_MODEL.objects.all()
+        #serializer =  (users, many=True)
         
         
-        return Response(serializer.data)
+        
         #return Response({'message': 'Hello', 'an_apiview': an_apiview})
-        #return Response(content)
+        return Response(content)
 
-    def POST(self, request):
+    def post(self, request):
         '''crea un mensaje con nuestro nombre'''
         serializer = self.serializer_class(data=request.data)
 
