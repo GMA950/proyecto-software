@@ -1,23 +1,7 @@
 # proyecto-software
-Proyecto para taller de Ingenieria de Software
+# ESTE PROYECTO FUE DIVIDIDO EN DOS REPOSITORIOS, CORRESPONDIENTES AL BACKEND Y FRONTEND
 
-npx create-react-app inventario-v2
-cd  inventario-v2
-
-reemplazar archivos por los del git
-
-
-despues
-
-npm install react-router-dom
-
-iniciamos la web de forma local con
-
-yarn start
-
-http://localhost:3000/
-
-
-se necesita de strapi y axios
-
-la version 14.7.0 de node fue usada
+## REPOSITORIO PARA BACKEND:
+https://github.com/enzomarin/proyecto-software-BACKEND
+## REPOSITORIO PARA FRONTEND:
+https://github.com/enzomarin/proyecto-software-FRONTEND
