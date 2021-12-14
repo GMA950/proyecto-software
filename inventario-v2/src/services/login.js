@@ -9,7 +9,7 @@ export default function login (username, pass){
 
     
     const getResponse = async () =>{
-        const res = await axios.post(`${ENDPOINT}/api-token-auth/`,{
+        const res = await axios.post(`${ENDPOINT}/api/api-token-auth/`,{
                 //identifier: 'enzom',
                 //password: 'aAenzom',
                 username: username,

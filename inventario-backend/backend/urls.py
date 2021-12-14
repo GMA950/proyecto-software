@@ -22,7 +22,7 @@ from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('profiles_api.urls')),
+    path('api/', include('profiles_api.urls')), # incluimos el urls.py de profiles_api 
     #path('',include(router.urls)),
     #path('products/', include('products.urls')),
     path('api/', include('products.urls')),
